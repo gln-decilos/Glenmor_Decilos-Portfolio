@@ -29,7 +29,7 @@ function LogoGroup({ isDuplicate = false }: { isDuplicate?: boolean }) {
 
 export default function LogoDesignSection() {
     return (
-        <section id="logo-designs" className="px-4 pb-12 pt-2 transition-colors md:px-16 lg:px-24 xl:px-40 dark:bg-zinc-950">
+        <section id="logo-designs" className="px-4 pb-9 pt-9 transition-colors md:px-16 lg:px-24 xl:px-40 dark:bg-zinc-950">
             <div className="mx-auto max-w-6xl">
                 <div className="mb-5 text-center">
                     <h2 className="text-sm font-semibold uppercase tracking-[0.24em] text-zinc-500 dark:text-zinc-400">

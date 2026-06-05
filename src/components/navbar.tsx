@@ -35,12 +35,10 @@ export default function Navbar() {
 
                 <div className="hidden md:flex items-center gap-2">
                     <ThemeToggle />
-                    <Link to="/" className="px-7 py-2 bg-green-500 hover:bg-green-600 active:scale-95 transition-all rounded-full text-white dark:bg-cyan-500 dark:hover:bg-cyan-400 dark:text-zinc-950">
-                        Get started
-                    </Link>
-                    <Link to="/" className="px-7 py-2 border border-gray-200 active:scale-95 hover:bg-slate-50 transition-all rounded-full text-slate-700 hover:text-slate-900 dark:border-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-800 dark:hover:text-white" >
-                        Login
-                    </Link>
+                    <a href="#contact" className="px-7 py-2 bg-green-500 hover:bg-green-600 active:scale-95 transition-all rounded-full text-white dark:bg-cyan-500 dark:hover:bg-cyan-400 dark:text-zinc-950">
+                        Let's work together
+                    </a>
+                    
                 </div>
 
                 <button onClick={() => setMenuOpen(true)} className="md:hidden active:scale-90 transition dark:text-zinc-100" aria-label="Open menu">

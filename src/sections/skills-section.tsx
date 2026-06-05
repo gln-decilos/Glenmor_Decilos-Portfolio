@@ -114,7 +114,7 @@ export default function SkillsSection() {
     ];
 
     return (
-        <section id="skills" className="scroll-m-28 px-4 py-16 transition-colors md:px-16 lg:px-24 xl:px-40 dark:bg-zinc-950">
+        <section id="skills" className="scroll-m-28 pb-15 pt-4 px-4 py-16 transition-colors md:px-16 lg:px-24 xl:px-40 dark:bg-zinc-950">
             <div className="mx-auto max-w-5xl">
                 <div className="mb-8 flex flex-col items-center gap-3 text-center">
                     <div className="inline-flex items-center gap-2 rounded-full border border-green-200 bg-green-50/80 px-4 py-2 text-sm font-medium text-green-700 shadow-sm backdrop-blur-sm dark:border-cyan-400/20 dark:bg-cyan-400/5 dark:text-cyan-200">
