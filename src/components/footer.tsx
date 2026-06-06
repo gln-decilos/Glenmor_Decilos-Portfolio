@@ -4,8 +4,6 @@ import {
     LinkedinIcon, 
     MailIcon, 
     MapPinIcon,
-    SparklesIcon,
-    ExternalLinkIcon
 } from "lucide-react";
 
 export default function Footer() {
