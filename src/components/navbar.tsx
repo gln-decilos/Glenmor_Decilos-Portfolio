@@ -1,4 +1,4 @@
-import { MenuIcon, SparklesIcon } from "lucide-react";
+import { MenuIcon, } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import ThemeToggle from "./theme-toggle";
@@ -78,10 +78,8 @@ export default function Navbar() {
 
                 {/* Brand in Mobile Menu */}
                 <div className="mb-4 flex items-center gap-2">
-                    <div className="flex size-8 items-center justify-center rounded-lg bg-gradient-to-br from-green-600 to-emerald-600">
-                        <SparklesIcon className="size-4 text-white" />
-                    </div>
-                    <span className="text-base font-semibold text-white">gln.decilos</span>
+                    
+                    <span className="text-base font-semibold text-white">Glenmor Decilos</span>
                 </div>
 
                 {/* Mobile Navigation Links */}

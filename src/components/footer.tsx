@@ -19,7 +19,7 @@ export default function Footer() {
     const socialLinks = [
         { name: "GitHub", icon: GithubIcon, href: "https://github.com/yourusername" },
         { name: "LinkedIn", icon: LinkedinIcon, href: "https://linkedin.com/in/yourusername" },
-        { name: "Email", icon: MailIcon, href: "mailto:glenmor@gmail.com" },
+        { name: "Email", icon: MailIcon, href: "mailto:gln.decilos@gmail.com" },
     ];
 
     return (
@@ -84,7 +84,7 @@ export default function Footer() {
                         <ul className="space-y-3">
                             <li className="flex items-center gap-3 text-sm text-zinc-600 dark:text-zinc-400">
                                 <MailIcon className="size-3.5 shrink-0 text-zinc-500 dark:text-zinc-500" />
-                                <span>glenmor.decilos@gmail.com</span>
+                                <span>gln.decilos@gmail.com</span>
                             </li>
                             <li className="flex items-center gap-3 text-sm text-zinc-600 dark:text-zinc-400">
                                 <MapPinIcon className="size-3.5 shrink-0 text-zinc-500 dark:text-zinc-500" />
