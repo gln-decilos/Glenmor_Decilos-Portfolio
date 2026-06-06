@@ -92,7 +92,7 @@ export default function ProjectsSection() {
                             Selected Works
                         </h2>
                         <p className="mx-auto max-w-2xl text-base text-zinc-600 dark:text-zinc-400">
-                            A collection of work where design and development meet to create meaningful digital experiences. Open a project to see the process, role, stack, and outcome.
+                            A collection of work where design and development meet to create meaningful digital experiences.
                         </p>
                     </div>
                 </div>

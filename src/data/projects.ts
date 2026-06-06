@@ -54,7 +54,7 @@ export const projects: Project[] = [
         image: "/projects/readbee.png",
         coverAccent: "from-green-100 via-emerald-50 to-white dark:from-cyan-950/50 dark:via-zinc-950 dark:to-zinc-950",
         overview: [
-            "ReadBee is a capstone project that is currently undergoing tech transfer training at the Department of Education (DepEd) in the 1st District of Nasugbu, Batangas. The system is designed to revolutionize how oral reading assessments are conducted in elementary schools.",
+            "ReadBee is a capstone project that is currently undergoing tech transfer training at the Department of Education (DepEd) in the 1st District of Batangas. The system is designed to revolutionize how oral reading assessments are conducted in elementary schools.",
             "As the Project Leader, UI/UX Designer, and Web Developer, I led the development of this voice-based reading assessment platform that uses voice recognition technology and digital scoring to automatically calculate the score pupil reading performance. The system provides teachers with real-time analytics and data-driven insights to support student learning.",
         ],
         challenge: "The main challenge was developing an accurate voice recognition system that could assess young learners' reading in real-time while accounting for different accents, reading speeds, and environmental noise. Additionally, we needed to create an intuitive interface that teachers with varying technical skills could easily adopt.",
