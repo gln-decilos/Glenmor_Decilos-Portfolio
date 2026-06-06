@@ -1,82 +1,121 @@
 import { Link } from "react-router-dom";
+import { 
+    GithubIcon, 
+    LinkedinIcon, 
+    MailIcon, 
+    MapPinIcon,
+    SparklesIcon,
+    ExternalLinkIcon
+} from "lucide-react";
 
 export default function Footer() {
+    const currentYear = new Date().getFullYear();
+
+    const navLinks = [
+        { name: "Home", href: "/#home" },
+        { name: "About", href: "/#about" },
+        { name: "Projects", href: "/#projects" },
+        { name: "Contact", href: "/#contact" },
+    ];
+
+    const socialLinks = [
+        { name: "GitHub", icon: GithubIcon, href: "https://github.com/yourusername" },
+        { name: "LinkedIn", icon: LinkedinIcon, href: "https://linkedin.com/in/yourusername" },
+        { name: "Email", icon: MailIcon, href: "mailto:glenmor@example.com" },
+    ];
+
     return (
-        <>
-            <footer className="flex flex-wrap justify-center lg:justify-between overflow-hidden gap-10 md:gap-20 py-16 px-6 md:px-16 lg:px-24 xl:px-32 text-gray-500 bg-linear-to-r from-green-200/60 via-green-200/60 to-green-200/60 md:from-white md:via-green-200/60 md:to-white mt-52 transition-colors dark:text-zinc-400 dark:from-zinc-950 dark:via-zinc-900 dark:to-zinc-950 dark:md:from-zinc-950 dark:md:via-zinc-900 dark:md:to-zinc-950">
-                <div className="flex flex-wrap items-start gap-10 md:gap-15 xl:gap-35">
-                    <a href="https://prebuiltui.com" className="max-md:w-full max-md:mb-10">
-                        <img
-                            src='/logo.svg'
-                            alt="Logo"
-                            width={103}
-                            height={35}
-                            className="h-10 w-auto dark:brightness-0 dark:invert"
-                        />
-                    </a>
-                    <div>
-                        <p className="font-semibold text-gray-800 dark:text-zinc-100">Product</p>
-                        <ul className="mt-2 space-y-2">
-                            <li><Link to="/" className="hover:text-green-600 transition dark:hover:text-cyan-300">Home</Link></li>
-                            <li><Link to="/" className="hover:text-green-600 transition dark:hover:text-cyan-300">Support</Link></li>
-                            <li><Link to="/" className="hover:text-green-600 transition dark:hover:text-cyan-300">Pricing</Link></li>
-                            <li><Link to="/" className="hover:text-green-600 transition dark:hover:text-cyan-300">Affiliate</Link></li>
+        <footer className="border-t border-zinc-200 bg-white transition-colors dark:border-zinc-800 dark:bg-zinc-950">
+            <div className="mx-auto max-w-6xl px-4 py-16 md:px-8 lg:py-20">
+                {/* Main Footer Grid */}
+                <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-12">
+                    {/* Brand Column - 5 columns */}
+                    <div className="space-y-4 lg:col-span-5">
+                        <div className="flex items-center gap-3">
+                           
+                            <div>
+                                <span className="text-lg font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">
+                                    Glenmor Decilos
+                                </span>
+                                <p className="text-xs text-zinc-500 dark:text-zinc-500">UI/UX Designer & Developer</p>
+                            </div>
+                        </div>
+                        <p className="max-w-sm text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+                            Creating purposeful digital experiences through thoughtful design and clean, functional development.
+                        </p>
+                        <div className="flex items-center gap-2">
+                            {socialLinks.map((social) => (
+                                <a
+                                    key={social.name}
+                                    href={social.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="rounded-lg p-2 text-zinc-500 transition-all duration-200 hover:bg-zinc-100 hover:text-zinc-900 dark:text-zinc-500 dark:hover:bg-zinc-800 dark:hover:text-zinc-200"
+                                    aria-label={social.name}
+                                >
+                                    <social.icon className="size-4" />
+                                </a>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Navigation Column - 3 columns */}
+                    <div className="lg:col-span-3">
+                        <h3 className="mb-4 text-xs font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-500">
+                            Navigation
+                        </h3>
+                        <ul className="space-y-2">
+                            {navLinks.map((link) => (
+                                <li key={link.name}>
+                                    <Link
+                                        to={link.href}
+                                        className="text-sm text-zinc-600 transition-colors hover:text-green-600 dark:text-zinc-400 dark:hover:text-cyan-300"
+                                    >
+                                        {link.name}
+                                    </Link>
+                                </li>
+                            ))}
                         </ul>
                     </div>
-                    <div>
-                        <p className="font-semibold text-gray-800 dark:text-zinc-100">Resources</p>
-                        <ul className="mt-2 space-y-2">
-                            <li><Link to="/" className="hover:text-green-600 transition dark:hover:text-cyan-300">Company</Link></li>
-                            <li><Link to="/" className="hover:text-green-600 transition dark:hover:text-cyan-300">Blogs</Link></li>
-                            <li><Link to="/" className="hover:text-green-600 transition dark:hover:text-cyan-300">Community</Link></li>
-                            <li><Link to="/" className="hover:text-green-600 transition dark:hover:text-cyan-300">Careers<span className="text-xs text-white bg-green-600 rounded-md ml-2 px-2 py-1 dark:bg-cyan-500 dark:text-zinc-950">We’re hiring!</span></Link></li>
-                            <li><Link to="/" className="hover:text-green-600 transition dark:hover:text-cyan-300">About</Link></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <p className="font-semibold text-gray-800 dark:text-zinc-100">Legal</p>
-                        <ul className="mt-2 space-y-2">
-                            <li><Link to="/" className="hover:text-green-600 transition dark:hover:text-cyan-300">Privacy</Link></li>
-                            <li><Link to="/" className="hover:text-green-600 transition dark:hover:text-cyan-300">Terms</Link></li>
+
+                    {/* Contact Column - 4 columns */}
+                    <div className="lg:col-span-4">
+                        <h3 className="mb-4 text-xs font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-500">
+                            Contact
+                        </h3>
+                        <ul className="space-y-3">
+                            <li className="flex items-center gap-3 text-sm text-zinc-600 dark:text-zinc-400">
+                                <MailIcon className="size-3.5 shrink-0 text-zinc-500 dark:text-zinc-500" />
+                                <span>glenmor.decilos@example.com</span>
+                            </li>
+                            <li className="flex items-center gap-3 text-sm text-zinc-600 dark:text-zinc-400">
+                                <MapPinIcon className="size-3.5 shrink-0 text-zinc-500 dark:text-zinc-500" />
+                                <span>Nasugbu, Batangas, Philippines</span>
+                            </li>
+                            <li className="mt-3 flex items-center gap-2">
+                                <span className="relative flex size-2">
+                                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75"></span>
+                                    <span className="relative inline-flex size-2 rounded-full bg-green-600"></span>
+                                </span>
+                                <span className="text-xs font-medium text-green-700 dark:text-cyan-300">
+                                    Available for opportunities
+                                </span>
+                            </li>
                         </ul>
                     </div>
                 </div>
-                <div className="flex flex-col max-md:items-center max-md:text-center gap-2 items-end max-md:mt-10">
-                    <p className="max-w-60">Making every customer feel valued no matter the size of your audience.</p>
-                    <div className="flex items-center gap-4 mt-3">
-                        <a href="https://dribbble.com/prebuiltui" target="_blank" rel="noreferrer">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-dribbble size-5 hover:text-green-500 dark:hover:text-cyan-300" aria-hidden="true">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <path d="M19.13 5.09C15.22 9.14 10 10.44 2.25 10.94"></path>
-                                <path d="M21.75 12.84c-6.62-1.41-12.14 1-16.38 6.32"></path>
-                                <path d="M8.56 2.75c4.37 6 6 9.42 8 17.72"></path>
-                            </svg>
-                        </a>
-                        <a href="https://www.linkedin.com/company/prebuiltui" target="_blank" rel="noreferrer">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-linkedin size-5 hover:text-green-500 dark:hover:text-cyan-300" aria-hidden="true">
-                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                                <rect width="4" height="12" x="2" y="9"></rect>
-                                <circle cx="4" cy="4" r="2"></circle>
-                            </svg>
-                        </a>
-                        <a href="https://x.com/prebuiltui" target="_blank" rel="noreferrer">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-twitter size-5 hover:text-green-500 dark:hover:text-cyan-300" aria-hidden="true">
-                                <path
-                                    d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z">
-                                </path>
-                            </svg>
-                        </a>
-                        <a href="https://www.youtube.com/@prebuiltui" target="_blank" rel="noreferrer">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-youtube size-6 hover:text-green-500 dark:hover:text-cyan-300" aria-hidden="true">
-                                <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17">
-                                </path>
-                                <path d="m10 15 5-3-5-3z"></path>
-                            </svg>
-                        </a>
-                    </div>
-                    <p className="mt-3 text-center">© 2025 <a href="https://prebuiltui.com">PrebuiltUI</a></p>
+
+                {/* Divider */}
+                <div className="my-8 border-t border-zinc-100 dark:border-zinc-800" />
+
+                {/* Bottom Bar */}
+                <div className="flex flex-col items-center justify-between gap-4 text-center sm:flex-row">
+                    <p className="text-xs text-zinc-500 dark:text-zinc-500">
+                        © {currentYear} Glenmor A. Decilos. All rights reserved.
+                    </p>
+                    
                 </div>
-            </footer>
-        </>
+            </div>
+        </footer>
     );
-};
+}

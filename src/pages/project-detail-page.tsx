@@ -425,7 +425,7 @@ export default function ProjectDetailPage() {
                                             {projectPhotoImages.map((img, idx) => (
                                                 <button
                                                     key={idx}
-                                                    onClick={() => openModal(screenshotImages, idx)}
+                                                    onClick={() => openModal(projectPhotoImages, idx)}  // FIXED: changed from screenshotImages to projectPhotoImages
                                                     className="group cursor-pointer overflow-hidden rounded-xl border border-zinc-200 bg-white transition hover:border-zinc-300 hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900/50 dark:hover:border-zinc-700"
                                                 >
                                                     <div className="aspect-video bg-zinc-100 dark:bg-zinc-800">

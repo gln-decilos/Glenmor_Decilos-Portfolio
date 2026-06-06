@@ -15,6 +15,7 @@ function ProjectItem({ project }: { project: Project }) {
         <Link
             to={`/projects/${project.slug}`}
             className="group block h-full overflow-hidden rounded-xl border border-zinc-200 bg-white transition-all duration-300 hover:-translate-y-0.5 hover:border-green-200 hover:shadow-md hover:shadow-green-100/60 dark:border-zinc-800 dark:bg-zinc-900/50 dark:hover:border-cyan-400/30 dark:hover:shadow-cyan-950/20"
+            title={`View project details`}
         >
             <article className="grid h-full md:grid-cols-[180px_1fr]">
                 <div className="relative h-40 w-full overflow-hidden bg-zinc-100 md:h-[180px] dark:bg-zinc-800">
@@ -33,7 +34,10 @@ function ProjectItem({ project }: { project: Project }) {
                         <h3 className="line-clamp-2 text-base font-bold leading-tight text-zinc-900 md:text-[1.05rem] dark:text-zinc-50">
                             {project.title}
                         </h3>
-                        <span className="mt-1 flex size-8 shrink-0 items-center justify-center rounded-full border border-zinc-200 text-zinc-500 transition group-hover:border-green-200 group-hover:bg-green-50 group-hover:text-green-700 dark:border-zinc-700 dark:text-zinc-400 dark:group-hover:border-cyan-400/30 dark:group-hover:bg-cyan-400/10 dark:group-hover:text-cyan-300">
+                        <span 
+                            className="mt-1 flex size-8 shrink-0 items-center justify-center rounded-full border border-zinc-200 text-zinc-500 transition group-hover:border-green-200 group-hover:bg-green-50 group-hover:text-green-700 dark:border-zinc-700 dark:text-zinc-400 dark:group-hover:border-cyan-400/30 dark:group-hover:bg-cyan-400/10 dark:group-hover:text-cyan-300"
+                            title="Click to view project details"
+                        >
                             <ArrowUpRightIcon className="size-4" />
                         </span>
                     </div>
@@ -46,6 +50,7 @@ function ProjectItem({ project }: { project: Project }) {
                             <span
                                 key={tag}
                                 className="rounded-full bg-zinc-100 px-2.5 py-1 text-[10px] font-medium text-zinc-700 transition-colors group-hover:bg-green-50 group-hover:text-green-700 dark:bg-zinc-800 dark:text-zinc-300 dark:group-hover:bg-cyan-400/10 dark:group-hover:text-cyan-300"
+                                title={`Technology: ${tag}`}
                             >
                                 {tag}
                             </span>
@@ -115,6 +120,7 @@ export default function ProjectsSection() {
                                 disabled={currentPage === 0}
                                 className="flex size-9 items-center justify-center rounded-full border border-zinc-200 text-zinc-600 transition hover:bg-zinc-100 disabled:opacity-40 dark:border-zinc-700 dark:text-zinc-400 dark:hover:bg-zinc-800"
                                 aria-label="Previous"
+                                title="Previous page"
                             >
                                 <ArrowLeftIcon className="size-4" />
                             </button>
@@ -131,6 +137,7 @@ export default function ProjectsSection() {
                                                 : "w-2 bg-zinc-300 hover:bg-zinc-400 dark:bg-zinc-700"
                                         }`}
                                         aria-label={`Page ${index + 1}`}
+                                        title={`Go to page ${index + 1}`}
                                     />
                                 ))}
                             </div>
@@ -141,6 +148,7 @@ export default function ProjectsSection() {
                                 disabled={currentPage === pageCount - 1}
                                 className="flex size-9 items-center justify-center rounded-full border border-zinc-200 text-zinc-600 transition hover:bg-zinc-100 disabled:opacity-40 dark:border-zinc-700 dark:text-zinc-400 dark:hover:bg-zinc-800"
                                 aria-label="Next"
+                                title="Next page"
                             >
                                 <ArrowRightIcon className="size-4" />
                             </button>
