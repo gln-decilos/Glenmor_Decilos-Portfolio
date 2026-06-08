@@ -33,7 +33,7 @@ export default function AboutSection() {
           <div className="mx-auto w-full max-w-sm">
             <div className="overflow-hidden rounded-3xl border border-zinc-200 bg-zinc-100 p-2.5 shadow-lg shadow-zinc-200/50 dark:border-zinc-800 dark:bg-zinc-900 dark:shadow-black/30">
               <img
-                src="/glenmor-profile-3.jpg"
+                src="/glen-portrait-2.jpg"
                 alt="Glenmor A. Decilos"
                 className="aspect-[4/5] w-full rounded-2xl object-cover"
               />
