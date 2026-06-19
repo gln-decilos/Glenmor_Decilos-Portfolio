@@ -10,6 +10,7 @@ export default function Navbar() {
         { href: "/#home", label: "Home" },
         { href: "/#about", label: "About" },
         { href: "/#skills", label: "Skills" },
+        { href: "/#certificates", label: "Certificates" },
         { href: "/#projects", label: "Projects" },
         { href: "/#contact", label: "Contact" },
     ];
@@ -43,10 +44,12 @@ export default function Navbar() {
                     <div className="hidden items-center gap-3 md:flex">
                         <ThemeToggle />
                         <a
-                            href="/#contact"
+                            href="/Glenmor-Decilos-CV.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="rounded-full bg-gradient-to-r from-green-600 to-emerald-600 px-5 py-2 text-sm font-medium text-white transition-all hover:scale-105 hover:shadow-md active:scale-95 dark:from-cyan-500 dark:to-teal-500"
                         >
-                            Contact me
+                            Hire Me
                         </a>
                     </div>
 
@@ -94,15 +97,17 @@ export default function Navbar() {
                     </a>
                 ))}
 
-                {/* Mobile Theme Toggle & Contact */}
+                {/* Mobile Theme Toggle & CV */}
                 <div className="mt-6 flex items-center gap-4">
                     <ThemeToggle />
                     <a
-                        href="/#contact"
+                        href="/Glenmor-Decilos-CV.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         onClick={() => setMenuOpen(false)}
                         className="rounded-full bg-gradient-to-r from-green-600 to-emerald-600 px-6 py-2 text-sm font-medium text-white transition hover:scale-105 active:scale-95"
                     >
-                        Contact me
+                        View CV
                     </a>
                 </div>
             </div>

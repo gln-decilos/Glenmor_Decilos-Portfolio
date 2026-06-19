@@ -14,7 +14,7 @@ function ProjectItem({ project }: { project: Project }) {
     return (
         <Link
             to={`/projects/${project.slug}`}
-            className="group block h-full overflow-hidden rounded-xl border border-zinc-200 bg-white transition-all duration-300 hover:-translate-y-0.5 hover:border-green-200 hover:shadow-md hover:shadow-green-100/60 dark:border-zinc-800 dark:bg-zinc-900/50 dark:hover:border-cyan-400/30 dark:hover:shadow-cyan-950/20"
+            className="group block h-full overflow-hidden rounded-xl border border-zinc-200 bg-white shadow-sm shadow-zinc-200/50 transition-all duration-300 hover:-translate-y-1 hover:border-emerald-200 hover:shadow-xl hover:shadow-emerald-100/70 dark:border-zinc-800 dark:bg-zinc-900/70 dark:shadow-black/20 dark:hover:border-cyan-400/30 dark:hover:shadow-cyan-950/20"
             title={`View project details`}
         >
             <article className="grid h-full md:grid-cols-[180px_1fr]">
@@ -22,8 +22,12 @@ function ProjectItem({ project }: { project: Project }) {
                     <img
                         src={project.image}
                         alt={`${project.title} preview`}
-                        className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                     />
+                    <div className="absolute inset-x-0 bottom-0 flex items-center justify-between bg-linear-to-t from-black/70 to-transparent px-4 pb-4 pt-12 text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                        <span className="text-xs font-semibold">View project details</span>
+                        <ArrowUpRightIcon className="size-4" />
+                    </div>
                     <div className="absolute left-3 top-3 rounded-full border border-white/60 bg-white/85 px-3 py-1 text-[10px] font-semibold text-zinc-700 shadow-sm backdrop-blur dark:border-zinc-700 dark:bg-zinc-950/70 dark:text-zinc-200">
                         {project.category}
                     </div>
@@ -35,7 +39,7 @@ function ProjectItem({ project }: { project: Project }) {
                             {project.title}
                         </h3>
                         <span 
-                            className="mt-1 flex size-8 shrink-0 items-center justify-center rounded-full border border-zinc-200 text-zinc-500 transition group-hover:border-green-200 group-hover:bg-green-50 group-hover:text-green-700 dark:border-zinc-700 dark:text-zinc-400 dark:group-hover:border-cyan-400/30 dark:group-hover:bg-cyan-400/10 dark:group-hover:text-cyan-300"
+                            className="mt-1 flex size-8 shrink-0 items-center justify-center rounded-full border border-zinc-200 text-zinc-500 transition group-hover:border-emerald-200 group-hover:bg-emerald-50 group-hover:text-emerald-700 dark:border-zinc-700 dark:text-zinc-400 dark:group-hover:border-cyan-400/30 dark:group-hover:bg-cyan-400/10 dark:group-hover:text-cyan-300"
                             title="Click to view project details"
                         >
                             <ArrowUpRightIcon className="size-4" />
@@ -49,7 +53,7 @@ function ProjectItem({ project }: { project: Project }) {
                         {project.tags.map((tag) => (
                             <span
                                 key={tag}
-                                className="rounded-full bg-zinc-100 px-2.5 py-1 text-[10px] font-medium text-zinc-700 transition-colors group-hover:bg-green-50 group-hover:text-green-700 dark:bg-zinc-800 dark:text-zinc-300 dark:group-hover:bg-cyan-400/10 dark:group-hover:text-cyan-300"
+                                className="rounded-full bg-zinc-100 px-2.5 py-1 text-[10px] font-medium text-zinc-700 transition-colors group-hover:bg-emerald-50 group-hover:text-emerald-700 dark:bg-zinc-800 dark:text-zinc-300 dark:group-hover:bg-cyan-400/10 dark:group-hover:text-cyan-300"
                                 title={`Technology: ${tag}`}
                             >
                                 {tag}
@@ -83,7 +87,7 @@ export default function ProjectsSection() {
         <section id="projects" className="scroll-m-28 px-4 py-20 pt-10 transition-colors md:px-16 lg:px-24 xl:px-40 dark:bg-zinc-950">
             <div className="mx-auto max-w-5xl">
                 <div className="mb-12 flex flex-col items-center gap-4 text-center">
-                    <div className="inline-flex items-center gap-2 rounded-full border border-green-200 bg-green-50/80 px-4 py-2 text-sm font-medium text-green-700 backdrop-blur-sm dark:border-cyan-400/20 dark:bg-cyan-400/5 dark:text-cyan-200">
+                    <div className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50/80 px-4 py-2 text-sm font-medium text-emerald-700 backdrop-blur-sm dark:border-cyan-400/20 dark:bg-cyan-400/5 dark:text-cyan-200">
                         <SparklesIcon className="size-4" />
                         Featured Work
                     </div>
@@ -133,7 +137,7 @@ export default function ProjectsSection() {
                                         onClick={() => setCurrentPage(index)}
                                         className={`h-2 rounded-full transition-all ${
                                             currentPage === index
-                                                ? "w-6 bg-green-500 dark:bg-cyan-400"
+                                                ? "w-6 bg-emerald-500 dark:bg-cyan-400"
                                                 : "w-2 bg-zinc-300 hover:bg-zinc-400 dark:bg-zinc-700"
                                         }`}
                                         aria-label={`Page ${index + 1}`}
