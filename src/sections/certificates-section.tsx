@@ -4,7 +4,6 @@ import {
     Building2Icon,
     CalendarDaysIcon,
     ExternalLinkIcon,
-    SparklesIcon,
     XIcon,
     ZoomInIcon,
 } from "lucide-react";
