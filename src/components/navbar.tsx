@@ -1,4 +1,4 @@
-import { MenuIcon, } from "lucide-react";
+import { MenuIcon, XIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import ThemeToggle from "./theme-toggle";
@@ -17,96 +17,54 @@ export default function Navbar() {
 
     return (
         <>
-            <nav className="sticky top-0 z-50 w-full border-b border-zinc-200 bg-white/80 backdrop-blur-md transition-colors dark:border-zinc-800 dark:bg-zinc-950/80">
-                <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:px-8">
-                    {/* Brand Logo */}
+            <nav className="site-nav sticky top-0 z-50 w-full">
+                <div className="section-shell flex items-center justify-between py-3.5">
                     <Link to="/" className="group flex items-center gap-2 transition-opacity hover:opacity-80">
-                      
-                        <span className="text-base font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">
-                            Glenmor Decilos
-                        </span>
+                        <span className="grid size-8 place-items-center rounded-lg border border-[var(--line)] bg-[var(--accent-soft)] font-mono text-xs font-bold text-[var(--accent-strong)]">GD</span>
+                        <span className="site-brand text-[0.95rem] font-bold">Glenmor Decilos</span>
                     </Link>
 
-                    {/* Desktop Navigation */}
                     <div className="hidden items-center gap-6 md:flex">
                         {navLinks.map((link) => (
-                            <a
-                                key={link.href}
-                                href={link.href}
-                                className="text-sm font-medium text-zinc-600 transition-colors hover:text-green-600 dark:text-zinc-400 dark:hover:text-cyan-300"
-                            >
+                            <a key={link.href} href={link.href} className="nav-link">
                                 {link.label}
                             </a>
                         ))}
                     </div>
 
-                    {/* Desktop Right Section */}
                     <div className="hidden items-center gap-3 md:flex">
                         <ThemeToggle />
-                        <a
-                            href="/Glenmor-Decilos-CV.pdf"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="rounded-full bg-gradient-to-r from-green-600 to-emerald-600 px-5 py-2 text-sm font-medium text-white transition-all hover:scale-105 hover:shadow-md active:scale-95 dark:from-cyan-500 dark:to-teal-500"
-                        >
-                            Hire Me
+                        <a href="/Glenmor-Decilos-CV.pdf" target="_blank" rel="noopener noreferrer" className="button-primary min-h-0 px-4 py-2 text-xs">
+                            Hire me
                         </a>
                     </div>
 
-                    {/* Mobile Menu Button */}
                     <button
                         onClick={() => setMenuOpen(true)}
-                        className="rounded-lg p-2 text-zinc-700 transition-colors hover:bg-zinc-100 active:scale-95 dark:text-zinc-300 dark:hover:bg-zinc-800 md:hidden"
+                        className="grid size-10 place-items-center rounded-full border border-[var(--line)] bg-[var(--surface)] text-[var(--ink)] transition hover:border-[var(--accent)] hover:bg-[var(--accent-soft)] active:scale-95 md:hidden"
                         aria-label="Open menu"
                     >
-                        <MenuIcon className="size-5" />
+                        <MenuIcon className="size-4" />
                     </button>
                 </div>
             </nav>
 
-            {/* Mobile Menu Overlay */}
-            <div
-                className={`fixed inset-0 z-50 flex flex-col items-center justify-center gap-6 bg-black/95 backdrop-blur-lg transition-transform duration-300 md:hidden ${
-                    menuOpen ? "translate-x-0" : "-translate-x-full"
-                }`}
-            >
-                {/* Close Button */}
-                <button
-                    onClick={() => setMenuOpen(false)}
-                    className="absolute right-4 top-4 flex size-10 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20 active:scale-95"
-                    aria-label="Close menu"
-                >
-                    ✕
-                </button>
-
-                {/* Brand in Mobile Menu */}
-                <div className="mb-4 flex items-center gap-2">
-                    
-                    <span className="text-base font-semibold text-white">Glenmor Decilos</span>
+            <div className={`fixed inset-0 z-[60] flex flex-col items-center justify-center gap-7 bg-[var(--surface-strong)] px-6 transition-transform duration-300 md:hidden ${menuOpen ? "translate-x-0" : "translate-x-full"}`}>
+                <div className="absolute left-6 top-5 flex items-center gap-2 text-[var(--ink)]">
+                    <span className="grid size-8 place-items-center rounded-lg border border-[var(--line)] bg-[var(--accent-soft)] font-mono text-xs font-bold text-[var(--accent-strong)]">GD</span>
+                    <span className="text-sm font-bold tracking-[-0.03em]">Glenmor Decilos</span>
                 </div>
-
-                {/* Mobile Navigation Links */}
+                <button onClick={() => setMenuOpen(false)} className="absolute right-5 top-5 grid size-10 place-items-center rounded-full border border-[var(--line)] bg-[var(--surface-strong)] text-[var(--ink)] transition hover:border-[var(--accent)] hover:bg-[var(--accent-soft)]" aria-label="Close menu">
+                    <XIcon className="size-4" />
+                </button>
                 {navLinks.map((link) => (
-                    <a
-                        key={link.href}
-                        href={link.href}
-                        className="text-lg font-medium text-white transition-colors hover:text-cyan-300"
-                        onClick={() => setMenuOpen(false)}
-                    >
+                    <a key={link.href} href={link.href} className="text-2xl font-bold tracking-[-0.05em] text-[var(--ink)] transition hover:text-[var(--accent-strong)]" onClick={() => setMenuOpen(false)}>
                         {link.label}
                     </a>
                 ))}
-
-                {/* Mobile Theme Toggle & CV */}
-                <div className="mt-6 flex items-center gap-4">
+                <div className="mt-3 flex items-center gap-3">
                     <ThemeToggle />
-                    <a
-                        href="/Glenmor-Decilos-CV.pdf"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={() => setMenuOpen(false)}
-                        className="rounded-full bg-gradient-to-r from-green-600 to-emerald-600 px-6 py-2 text-sm font-medium text-white transition hover:scale-105 active:scale-95"
-                    >
+                    <a href="/Glenmor-Decilos-CV.pdf" target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)} className="button-primary">
                         View CV
                     </a>
                 </div>

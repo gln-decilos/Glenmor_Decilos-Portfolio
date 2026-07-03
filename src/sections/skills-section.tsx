@@ -17,11 +17,13 @@ import {
     WindIcon,
 } from "lucide-react";
 import type { ReactNode } from "react";
+import Reveal from "../components/reveal";
 
 type Skill = {
     name: string;
     icon: ReactNode;
-    color: string;
+    iconClass: string;
+    iconSurface: string;
 };
 
 export default function SkillsSection() {
@@ -29,121 +31,172 @@ export default function SkillsSection() {
         {
             name: "UI/UX Design",
             icon: <LayoutDashboardIcon className="size-4" />,
-            color: "text-green-700 bg-green-50 border-green-100 dark:text-cyan-300 dark:bg-cyan-400/10 dark:border-cyan-400/15",
+            iconClass: "text-violet-200",
+            iconSurface: "bg-violet-400/15",
         },
         {
             name: "Figma",
             icon: <FigmaIcon className="size-4" />,
-            color: "text-fuchsia-700 bg-fuchsia-50 border-fuchsia-100 dark:text-fuchsia-300 dark:bg-fuchsia-400/10 dark:border-fuchsia-400/15",
+            iconClass: "text-[#F24E1E]",
+            iconSurface: "bg-[#F24E1E]/15",
         },
         {
             name: "Wireframing",
             icon: <PenToolIcon className="size-4" />,
-            color: "text-sky-700 bg-sky-50 border-sky-100 dark:text-sky-300 dark:bg-sky-400/10 dark:border-sky-400/15",
+            iconClass: "text-sky-300",
+            iconSurface: "bg-sky-400/15",
         },
         {
             name: "Prototyping",
             icon: <MousePointerClickIcon className="size-4" />,
-            color: "text-violet-700 bg-violet-50 border-violet-100 dark:text-violet-300 dark:bg-violet-400/10 dark:border-violet-400/15",
+            iconClass: "text-violet-200",
+            iconSurface: "bg-violet-400/15",
         },
         {
             name: "HTML",
             icon: <FileCode2Icon className="size-4" />,
-            color: "text-orange-700 bg-orange-50 border-orange-100 dark:text-orange-300 dark:bg-orange-400/10 dark:border-orange-400/15",
+            iconClass: "text-[#FF745D]",
+            iconSurface: "bg-[#E34F26]/15",
         },
         {
             name: "CSS",
             icon: <PaletteIcon className="size-4" />,
-            color: "text-blue-700 bg-blue-50 border-blue-100 dark:text-blue-300 dark:bg-blue-400/10 dark:border-blue-400/15",
+            iconClass: "text-[#59A8E8]",
+            iconSurface: "bg-[#1572B6]/15",
         },
         {
             name: "JavaScript",
             icon: <BracesIcon className="size-4" />,
-            color: "text-yellow-700 bg-yellow-50 border-yellow-100 dark:text-yellow-300 dark:bg-yellow-400/10 dark:border-yellow-400/15",
+            iconClass: "text-[#F7DF1E]",
+            iconSurface: "bg-[#F7DF1E]/15",
         },
         {
             name: "PHP",
             icon: <Code2Icon className="size-4" />,
-            color: "text-indigo-700 bg-indigo-50 border-indigo-100 dark:text-indigo-300 dark:bg-indigo-400/10 dark:border-indigo-400/15",
+            iconClass: "text-[#A9ACD8]",
+            iconSurface: "bg-[#777BB4]/15",
         },
         {
             name: "Bootstrap",
             icon: <BoxesIcon className="size-4" />,
-            color: "text-purple-700 bg-purple-50 border-purple-100 dark:text-purple-300 dark:bg-purple-400/10 dark:border-purple-400/15",
+            iconClass: "text-[#B794E9]",
+            iconSurface: "bg-[#7952B3]/15",
         },
         {
             name: "Canva",
             icon: <LayersIcon className="size-4" />,
-            color: "text-cyan-700 bg-cyan-50 border-cyan-100 dark:text-cyan-300 dark:bg-cyan-400/10 dark:border-cyan-400/15",
+            iconClass: "text-[#37D8DF]",
+            iconSurface: "bg-[#00C4CC]/15",
         },
         {
             name: "GitHub",
             icon: <GithubIcon className="size-4" />,
-            color: "text-zinc-800 bg-zinc-50 border-zinc-200 dark:text-zinc-200 dark:bg-zinc-800/70 dark:border-zinc-700",
+            iconClass: "text-zinc-100",
+            iconSurface: "bg-white/10",
         },
         {
             name: "Laravel",
             icon: <ServerIcon className="size-4" />,
-            color: "text-red-700 bg-red-50 border-red-100 dark:text-red-300 dark:bg-red-400/10 dark:border-red-400/15",
+            iconClass: "text-[#FF6B61]",
+            iconSurface: "bg-[#FF2D20]/15",
         },
         {
             name: "React",
             icon: <AtomIcon className="size-4" />,
-            color: "text-sky-700 bg-sky-50 border-sky-100 dark:text-sky-300 dark:bg-sky-400/10 dark:border-sky-400/15",
+            iconClass: "text-[#61DAFB]",
+            iconSurface: "bg-[#61DAFB]/15",
         },
         {
             name: "Python",
             icon: <Code2Icon className="size-4" />,
-            color: "text-amber-700 bg-amber-50 border-amber-100 dark:text-amber-300 dark:bg-amber-400/10 dark:border-amber-400/15",
+            iconClass: "text-[#65A7D7]",
+            iconSurface: "bg-[#3776AB]/15",
         },
         {
             name: "Tailwind",
             icon: <WindIcon className="size-4" />,
-            color: "text-teal-700 bg-teal-50 border-teal-100 dark:text-teal-300 dark:bg-teal-400/10 dark:border-teal-400/15",
+            iconClass: "text-[#38BDF8]",
+            iconSurface: "bg-[#38BDF8]/15",
         },
         {
             name: "MySQL",
             icon: <DatabaseIcon className="size-4" />,
-            color: "text-blue-800 bg-blue-50 border-blue-100 dark:text-blue-300 dark:bg-blue-400/10 dark:border-blue-400/15",
+            iconClass: "text-[#6EABD7]",
+            iconSurface: "bg-[#4479A1]/15",
         },
         {
             name: "Postgres",
             icon: <Table2Icon className="size-4" />,
-            color: "text-slate-700 bg-slate-50 border-slate-200 dark:text-slate-300 dark:bg-slate-400/10 dark:border-slate-400/15",
+            iconClass: "text-[#8EAEFF]",
+            iconSurface: "bg-[#4169E1]/15",
         },
     ];
 
     return (
-        <section id="skills" className="scroll-m-28 pb-15 pt-4 px-4 py-16 transition-colors md:px-16 lg:px-24 xl:px-40 dark:bg-zinc-950">
-            <div className="mx-auto max-w-5xl">
-                <div className="mb-8 flex flex-col items-center gap-3 text-center">
-                    <div className="inline-flex items-center gap-2 rounded-full border border-green-200 bg-green-50/80 px-4 py-2 text-sm font-medium text-green-700 shadow-sm backdrop-blur-sm dark:border-cyan-400/20 dark:bg-cyan-400/5 dark:text-cyan-200">
-                        <Code2Icon className="size-4" />
-                        Skills
-                    </div>
-                    <h2 className="max-w-2xl text-3xl font-bold tracking-tight text-zinc-950 md:text-4xl dark:text-zinc-50">
-                        My design and development toolkit
-                    </h2>
-                    <p className="max-w-2xl text-base leading-7 text-zinc-600 dark:text-zinc-400">
-                        A focused set of tools and technologies I use to design clean interfaces, build responsive websites, and turn ideas into polished digital experiences.
-                    </p>
-                </div>
+        <section
+            id="skills"
+            className="relative isolate scroll-m-28 overflow-hidden bg-[#08050d] py-24 text-white sm:py-32"
+        >
+            <div aria-hidden="true" className="absolute inset-0 -z-20">
+                <div className="absolute inset-0 bg-[#08050d]" />
 
-                <div className="rounded-[2rem] border border-zinc-200 bg-white/80 p-5 shadow-xl shadow-zinc-200/50 backdrop-blur transition-colors dark:border-zinc-800 dark:bg-zinc-900/70 dark:shadow-black/30 sm:p-6">
-                    <div className="flex flex-wrap justify-center gap-3">
+                <div className="absolute -left-44 -top-44 size-[38rem] rounded-full bg-[#4c1d63]/60 blur-[130px]" />
+
+                <div className="absolute left-1/2 top-[12%] size-[44rem] -translate-x-1/2 rounded-full bg-[#673a83]/45 blur-[150px]" />
+
+                <div className="absolute -right-44 top-[18%] size-[36rem] rounded-full bg-[#7a235d]/40 blur-[145px]" />
+
+                <div className="absolute bottom-[-20rem] left-[18%] size-[48rem] rounded-full bg-[#241136]/70 blur-[170px]" />
+
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,transparent_0%,rgba(5,2,9,0.18)_50%,rgba(0,0,0,0.92)_100%)]" />
+            </div>
+
+            <div
+                aria-hidden="true"
+                className="absolute inset-0 -z-10 bg-white/[0.015] backdrop-blur-[2px]"
+            />
+
+            <div className="section-shell relative z-10">
+                <Reveal className="mb-14 flex flex-col justify-between gap-6 sm:mb-16 sm:flex-row sm:items-end">
+                    <div>
+                        <div className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/[0.045] px-4 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-white/85 backdrop-blur-md">
+                            <Code2Icon className="size-3.5 text-violet-200" />
+                            Skills
+                        </div>
+
+                        <h2 className="mt-6 max-w-3xl text-4xl font-bold leading-[0.98] tracking-[-0.065em] text-white sm:text-5xl lg:text-6xl">
+                            Tools I use to create{" "}
+                            <span className="bg-gradient-to-r from-violet-300 via-fuchsia-300 to-purple-200 bg-clip-text text-transparent">
+                                better digital experiences.
+                            </span>
+                        </h2>
+                    </div>
+
+                    <p className="max-w-md text-[0.96rem] leading-7 text-white/70 sm:text-right">
+                        A focused toolkit for designing clean interfaces,
+                        building responsive websites, and translating ideas into
+                        polished, practical digital products.
+                    </p>
+                </Reveal>
+
+                <Reveal delay={100}>
+                    <div className="mx-auto flex max-w-6xl flex-wrap justify-center gap-3 sm:gap-4">
                         {skills.map((skill) => (
                             <div
                                 key={skill.name}
-                                className={`group inline-flex items-center gap-2 rounded-full border px-4 py-2.5 text-sm font-semibold shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md ${skill.color}`}
+                                className="group inline-flex min-w-[10.5rem] items-center justify-center gap-2.5 rounded-full border border-white/20 bg-black/15 px-5 py-3 text-sm font-semibold text-white shadow-[0_10px_28px_rgba(0,0,0,0.18)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-violet-300/55 hover:bg-white/[0.08] hover:shadow-[0_18px_34px_rgba(0,0,0,0.35)]"
                             >
-                                <span className="flex size-8 items-center justify-center rounded-full bg-white/80 shadow-sm transition-colors dark:bg-zinc-950/60">
+                                <span
+                                    className={`grid size-8 place-items-center rounded-full ${skill.iconSurface} ${skill.iconClass} transition-transform duration-300 group-hover:scale-110`}
+                                >
                                     {skill.icon}
                                 </span>
+
                                 <span>{skill.name}</span>
                             </div>
                         ))}
                     </div>
-                </div>
+                </Reveal>
             </div>
         </section>
     );

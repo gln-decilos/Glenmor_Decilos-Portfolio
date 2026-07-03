@@ -1,87 +1,65 @@
-import {
-  UserRoundIcon,
-  ArrowUpRightIcon,
-} from "lucide-react";
+import { ArrowUpRightIcon, UserRoundIcon } from "lucide-react";
+import Reveal from "../components/reveal";
 
 export default function AboutSection() {
-  return (
-    <section
-      id="about"
-      className="scroll-m-28 px-4 py-20 transition-colors md:px-16 lg:px-24 xl:px-40 dark:bg-zinc-950"
-    >
-      <div className="mx-auto max-w-5xl">
-        {/* Header */}
-        <div className="mb-12 text-center">
-          <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-4 py-1.5 text-sm font-medium text-emerald-700 dark:border-cyan-400/20 dark:bg-cyan-400/10 dark:text-cyan-200">
-            <UserRoundIcon className="size-4" />
-            About Me
-          </div>
-
-          <h2 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50">
-            Get to know me
-          </h2>
-
-          <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-zinc-600 dark:text-zinc-400">
-            A UI/UX designer and web developer focused on creating clean,
-            functional, and user-centered digital experiences.
-          </p>
+    return (
+        <section id="about" className="scroll-m-28 py-20 sm:py-28">
+            <div className="section-shell">
+                <Reveal className="mb-12 flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
+    <div>
+        <div className="inline-flex items-center gap-2 rounded-full border border-[#3a2450] bg-[#21102f] px-4 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-violet-200 shadow-sm backdrop-blur-md dark:border-white/15 dark:bg-white/[0.045] dark:text-violet-200">
+            <UserRoundIcon className="size-3.5 text-violet-200" />
+            About me
         </div>
 
-        {/* Main Content */}
-        <div className="grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr]">
-          {/* Image */}
-          <div className="mx-auto w-full max-w-sm">
-            <div className="overflow-hidden rounded-3xl border border-zinc-200 bg-zinc-100 p-2.5 shadow-lg shadow-zinc-200/50 dark:border-zinc-800 dark:bg-zinc-900 dark:shadow-black/30">
-              <img
-                src="/glen-portrait-2.jpg"
-                alt="Glenmor A. Decilos"
-                className="aspect-[4/5] w-full rounded-2xl object-cover"
-              />
+        <h2 className="mt-6 max-w-3xl text-4xl font-bold leading-[0.98] tracking-[-0.065em] text-zinc-950 sm:text-5xl lg:text-6xl dark:text-white">
+            A practical thinker with a{" "}
+            <span className="bg-gradient-to-r from-violet-500 via-fuchsia-500 to-purple-400 bg-clip-text text-transparent dark:from-violet-300 dark:via-fuchsia-300 dark:to-purple-200">
+                creative eye.
+            </span>
+        </h2>
+    </div>
+
+    <p className="max-w-md text-[0.96rem] leading-7 text-zinc-600 sm:text-right dark:text-white/70">
+        A UI/UX designer and web developer focused on creating clean,
+        functional, and user-centered digital experiences.
+    </p>
+</Reveal>
+
+                <div className="grid gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-center">
+                    <Reveal>
+                        <div className="surface-card relative mx-auto max-w-sm p-2.5 sm:p-3">
+                            <div className="relative overflow-hidden rounded-[1rem]">
+                                <img
+                                    src="/glen-portrait-2.jpg"
+                                    alt="Glenmor A. Decilos"
+                                    className="aspect-[4/5] w-full object-cover transition duration-700 hover:scale-[1.025]"
+                                />
+                                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/65 to-transparent px-5 pb-5 pt-16">
+                                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/65">Glenmor A. Decilos</p>
+                                    <p className="mt-1 text-sm font-semibold text-white">UI/UX Designer &amp; Web Developer</p>
+                                </div>
+                            </div>
+                        </div>
+                    </Reveal>
+
+                    <Reveal delay={120}>
+                        <div className="surface-card p-7 sm:p-9 lg:p-10">
+                            <p className="text-xs font-bold uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400">A little background</p>
+                            <h3 className="mt-3 text-2xl font-bold tracking-[-0.045em] text-zinc-950 dark:text-zinc-50 sm:text-3xl">Designing with clarity, building with purpose.</h3>
+                            <div className="mt-6 space-y-4 text-[0.96rem] leading-7 text-zinc-600 dark:text-zinc-300">
+                                <p>Hi, I&apos;m Glenmor. I&apos;m a BS Information Technology graduate majoring in Business Analytics from Batangas State University ARASOF-Nasugbu.</p>
+                                <p>I enjoy turning ideas into functional digital solutions through thoughtful design and reliable development. I focus on building interfaces that are clear, useful, and easy to use.</p>
+                                <p>Through academic projects and team collaborations, I developed strong leadership skills, a diligent work ethic, and a deadline-driven approach to every project I handle.</p>
+                            </div>
+                            <a href="#contact" className="button-primary mt-8 group">
+                                Let&apos;s connect
+                                <ArrowUpRightIcon className="size-4 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                            </a>
+                        </div>
+                    </Reveal>
+                </div>
             </div>
-          </div>
-
-          {/* Text */}
-          <div className="mx-auto max-w-lg text-center lg:text-left">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-600 dark:text-cyan-300">
-              Glenmor A. Decilos
-            </p>
-
-            <h3 className="mt-2 text-2xl font-bold leading-tight text-zinc-900 dark:text-zinc-50">
-              UI/UX Designer & Web Developer
-            </h3>
-
-            <div className="mt-5 space-y-3 text-sm leading-7 text-zinc-600 dark:text-zinc-300 md:text-base">
-              <p>
-                Hi, I&apos;m Glenmor. I&apos;m a BS Information Technology
-                graduate majoring in Business Analytics from Batangas State
-                University ARASOF-Nasugbu.
-              </p>
-
-              <p>
-                I enjoy turning ideas into functional digital solutions through
-                thoughtful design and reliable development. I focus on building
-                interfaces that are clear, useful, and easy to use.
-              </p>
-
-              <p>
-                Through academic projects and team collaborations, I developed
-                strong leadership skills, a diligent work ethic, and a
-                deadline-driven approach to every project I handle.
-              </p>
-            </div>
-
-            <div className="mt-7">
-              <a
-                href="#contact"
-                className="group inline-flex items-center gap-2 rounded-full bg-zinc-900 px-5 py-2.5 text-sm font-semibold text-white shadow-md shadow-zinc-900/20 transition hover:-translate-y-0.5 hover:bg-emerald-700 dark:bg-cyan-500 dark:text-zinc-950 dark:shadow-cyan-500/20 dark:hover:bg-cyan-400"
-              >
-                Let&apos;s connect
-                <ArrowUpRightIcon className="size-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+        </section>
+    );
 }

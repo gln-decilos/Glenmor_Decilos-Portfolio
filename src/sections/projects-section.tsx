@@ -7,6 +7,7 @@ import {
     SparklesIcon,
 } from "lucide-react";
 import { projects, type Project } from "../data/projects";
+import Reveal from "../components/reveal";
 
 const projectsPerPage = 3;
 
@@ -14,8 +15,8 @@ function ProjectItem({ project }: { project: Project }) {
     return (
         <Link
             to={`/projects/${project.slug}`}
-            className="group block h-full overflow-hidden rounded-xl border border-zinc-200 bg-white shadow-sm shadow-zinc-200/50 transition-all duration-300 hover:-translate-y-1 hover:border-emerald-200 hover:shadow-xl hover:shadow-emerald-100/70 dark:border-zinc-800 dark:bg-zinc-900/70 dark:shadow-black/20 dark:hover:border-cyan-400/30 dark:hover:shadow-cyan-950/20"
-            title={`View project details`}
+            className="group block h-full overflow-hidden rounded-xl border border-zinc-200 bg-white shadow-sm shadow-zinc-200/50 transition-all duration-300 hover:-translate-y-1 hover:border-violet-200 hover:shadow-xl hover:shadow-violet-100/70 dark:border-zinc-800 dark:bg-zinc-900/70 dark:shadow-black/20 dark:hover:border-violet-400/30 dark:hover:shadow-violet-950/20"
+            title="View project details"
         >
             <article className="grid h-full md:grid-cols-[180px_1fr]">
                 <div className="relative h-40 w-full overflow-hidden bg-zinc-100 md:h-[180px] dark:bg-zinc-800">
@@ -35,11 +36,11 @@ function ProjectItem({ project }: { project: Project }) {
 
                 <div className="flex min-h-[180px] flex-col gap-3 p-5">
                     <div className="flex items-start justify-between gap-4">
-                        <h3 className="line-clamp-2 text-base font-bold leading-tight text-zinc-900 md:text-[1.05rem] dark:text-zinc-50">
+                        <h3 className="line-clamp-2 text-base font-bold leading-tight tracking-[-0.025em] text-zinc-900 md:text-[1.05rem] dark:text-zinc-50">
                             {project.title}
                         </h3>
-                        <span 
-                            className="mt-1 flex size-8 shrink-0 items-center justify-center rounded-full border border-zinc-200 text-zinc-500 transition group-hover:border-emerald-200 group-hover:bg-emerald-50 group-hover:text-emerald-700 dark:border-zinc-700 dark:text-zinc-400 dark:group-hover:border-cyan-400/30 dark:group-hover:bg-cyan-400/10 dark:group-hover:text-cyan-300"
+                        <span
+                            className="mt-1 flex size-8 shrink-0 items-center justify-center rounded-full border border-zinc-200 text-zinc-500 transition group-hover:border-violet-200 group-hover:bg-violet-50 group-hover:text-violet-700 dark:border-zinc-700 dark:text-zinc-400 dark:group-hover:border-violet-400/30 dark:group-hover:bg-violet-400/10 dark:group-hover:text-violet-300"
                             title="Click to view project details"
                         >
                             <ArrowUpRightIcon className="size-4" />
@@ -53,7 +54,7 @@ function ProjectItem({ project }: { project: Project }) {
                         {project.tags.map((tag) => (
                             <span
                                 key={tag}
-                                className="rounded-full bg-zinc-100 px-2.5 py-1 text-[10px] font-medium text-zinc-700 transition-colors group-hover:bg-emerald-50 group-hover:text-emerald-700 dark:bg-zinc-800 dark:text-zinc-300 dark:group-hover:bg-cyan-400/10 dark:group-hover:text-cyan-300"
+                                className="rounded-full bg-zinc-100 px-2.5 py-1 text-[10px] font-medium text-zinc-700 transition-colors group-hover:bg-violet-50 group-hover:text-violet-700 dark:bg-zinc-800 dark:text-zinc-300 dark:group-hover:bg-violet-400/10 dark:group-hover:text-violet-300"
                                 title={`Technology: ${tag}`}
                             >
                                 {tag}
@@ -84,26 +85,34 @@ export default function ProjectsSection() {
     };
 
     return (
-        <section id="projects" className="scroll-m-28 px-4 py-20 pt-10 transition-colors md:px-16 lg:px-24 xl:px-40 dark:bg-zinc-950">
-            <div className="mx-auto max-w-5xl">
-                <div className="mb-12 flex flex-col items-center gap-4 text-center">
-                    <div className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50/80 px-4 py-2 text-sm font-medium text-emerald-700 backdrop-blur-sm dark:border-cyan-400/20 dark:bg-cyan-400/5 dark:text-cyan-200">
-                        <SparklesIcon className="size-4" />
-                        Featured Work
-                    </div>
-                    <div className="space-y-3">
-                        <h2 className="text-3xl font-bold tracking-tight text-zinc-950 md:text-4xl dark:text-zinc-50">
-                            Selected Works
-                        </h2>
-                        <p className="mx-auto max-w-2xl text-base text-zinc-600 dark:text-zinc-400">
-                            A collection of work where design and development meet to create meaningful digital experiences.
-                        </p>
-                    </div>
-                </div>
+        <section id="projects" className="scroll-m-28 py-20 sm:py-28">
+            <div className="section-shell">
+                <Reveal className="mb-12 flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
+    <div>
+        <div className="inline-flex items-center gap-2 rounded-full border border-[#3a2450] bg-[#21102f] px-4 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-violet-200 shadow-sm backdrop-blur-md dark:border-white/15 dark:bg-white/[0.045] dark:text-violet-200">
+            <SparklesIcon className="size-3.5 text-violet-200" />
+            Featured Work
+        </div>
+
+        <h2 className="mt-6 max-w-3xl text-4xl font-bold leading-[0.98] tracking-[-0.065em] text-zinc-950 sm:text-5xl lg:text-6xl dark:text-white">
+            Selected{" "}
+            <span className="bg-gradient-to-r from-violet-500 via-fuchsia-500 to-purple-400 bg-clip-text text-transparent dark:from-violet-300 dark:via-fuchsia-300 dark:to-purple-200">
+                Works.
+            </span>
+        </h2>
+    </div>
+
+    <p className="max-w-md text-[0.96rem] leading-7 text-zinc-600 sm:text-right dark:text-white/70">
+        A collection of work where design and development meet to create
+        meaningful digital experiences.
+    </p>
+</Reveal>
 
                 <div className="space-y-5">
-                    {visibleProjects.map((project) => (
-                        <ProjectItem key={project.slug} project={project} />
+                    {visibleProjects.map((project, index) => (
+                        <Reveal key={project.slug} delay={index * 70}>
+                            <ProjectItem project={project} />
+                        </Reveal>
                     ))}
                 </div>
 
@@ -137,7 +146,7 @@ export default function ProjectsSection() {
                                         onClick={() => setCurrentPage(index)}
                                         className={`h-2 rounded-full transition-all ${
                                             currentPage === index
-                                                ? "w-6 bg-emerald-500 dark:bg-cyan-400"
+                                                ? "w-6 bg-violet-600 dark:bg-violet-400"
                                                 : "w-2 bg-zinc-300 hover:bg-zinc-400 dark:bg-zinc-700"
                                         }`}
                                         aria-label={`Page ${index + 1}`}

@@ -78,8 +78,8 @@ export const projects: Project[] = [
         clientContext: "Department of Education (DepEd) - 1st District of Nasugbu, Batangas",
         projectType: "Capstone Project · Tech Transfer",
         liveUrl: "https://readbee.onrender.com",
-        githubUrl: "https://github.com/yourusername/readbee", // Add your actual GitHub URL
-        figmaUrl: "https://figma.com/your-readbee-design", // Add your Figma URL
+        githubUrl: "https://github.com/gln-decilos/ReadBee", // Add your actual GitHub URL
+        figmaUrl: "https://www.figma.com/design/yVyboWIj0Vk5tpL5XwWbcU/ReadBee?node-id=142-4931&t=c7f32UCtgL3kGvrw-1", // Add your Figma URL
         screenshotDescription:
             "Here are some screenshots of the ReadBee web application, showing the main pages and interface used by teachers, evaluators, and administrators.",
         capstoneDescription:
