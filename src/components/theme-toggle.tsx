@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 type Theme = "light" | "dark";
 
 const getInitialTheme = (): Theme => {
-    if (typeof window === "undefined") return "dark";
+    // Default to light during server-side rendering.
+    if (typeof window === "undefined") return "light";
 
     const savedTheme = window.localStorage.getItem("theme");
 
@@ -13,8 +14,8 @@ const getInitialTheme = (): Theme => {
         return savedTheme;
     }
 
-    // First-time visitors always open in dark mode.
-    return "dark";
+    // First-time visitors open in light mode.
+    return "light";
 };
 
 export default function ThemeToggle() {
