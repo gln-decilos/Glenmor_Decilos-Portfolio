@@ -36,7 +36,7 @@ const socialLinks: SocialLink[] = [
     {
         name: "Instagram",
         handle: "glenmor.decilos",
-        href: "https://www.instagram.com/glennzimore/",
+        href: "https://www.instagram.com/just_glnn/",
         icon: "instagram",
     },
 ];
@@ -107,51 +107,51 @@ export default function ContactSection() {
     return (
         <section
             id="contact"
-            className="relative isolate scroll-m-28 overflow-hidden bg-[#08050d] py-24 text-white sm:py-32"
+            className="relative isolate scroll-m-28 overflow-hidden bg-[#141711] py-24 text-[#EFEDE6] sm:py-32"
         >
             <div aria-hidden="true" className="absolute inset-0 -z-20">
-                <div className="absolute inset-0 bg-[#08050d]" />
+                <div className="absolute inset-0 bg-[#141711]" />
 
-                <div className="absolute -left-44 -top-44 size-[38rem] rounded-full bg-[#4c1d63]/60 blur-[130px]" />
+                <div className="absolute -left-44 -top-44 size-[38rem] rounded-full bg-[#3E620C]/60 blur-[130px]" />
 
-                <div className="absolute left-[30%] top-[8%] size-[42rem] rounded-full bg-[#673a83]/40 blur-[150px]" />
+                <div className="absolute left-[30%] top-[8%] size-[42rem] rounded-full bg-[#6B7F20]/40 blur-[150px]" />
 
-                <div className="absolute -right-44 top-[12%] size-[38rem] rounded-full bg-[#7a235d]/40 blur-[145px]" />
+                <div className="absolute -right-44 top-[12%] size-[38rem] rounded-full bg-[#9B8E2F]/40 blur-[145px]" />
 
-                <div className="absolute bottom-[-20rem] left-[12%] size-[50rem] rounded-full bg-[#241136]/75 blur-[175px]" />
+                <div className="absolute bottom-[-20rem] left-[12%] size-[50rem] rounded-full bg-[#202716]/75 blur-[175px]" />
 
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,transparent_0%,rgba(5,2,9,0.18)_50%,rgba(0,0,0,0.92)_100%)]" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,transparent_0%,rgba(3,5,2,0.12)_50%,rgba(0,0,0,0.92)_100%)]" />
             </div>
 
             <div
                 aria-hidden="true"
-                className="absolute inset-0 -z-10 bg-white/[0.015] backdrop-blur-[2px]"
+                className="absolute inset-0 -z-10 bg-[#EFEDE6]/[0.015] backdrop-blur-[2px]"
             />
 
             <div className="section-shell relative z-10">
                 <Reveal>
                     <div className="grid gap-12 lg:grid-cols-[0.86fr_1.14fr] lg:items-end lg:gap-16">
                         <div>
-                            <div className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/[0.045] px-4 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-white/85 backdrop-blur-md">
-                                <SendIcon className="size-3.5 text-violet-200" />
+                            <div className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-[#EFEDE6]/[0.045] px-4 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-[#EFEDE6]/85 backdrop-blur-md">
+                                <SendIcon className="size-3.5 text-[#DDE7B7]" />
                                 Contact
                             </div>
 
-                            <h2 className="mt-6 max-w-xl text-4xl font-bold leading-[0.98] tracking-[-0.065em] text-white sm:text-5xl lg:text-6xl">
+                            <h2 className="mt-6 max-w-xl text-4xl font-bold leading-[0.98] tracking-[-0.065em] text-[#EFEDE6] sm:text-5xl lg:text-6xl">
                                 Let&apos;s build something{" "}
-                                <span className="bg-gradient-to-r from-violet-300 via-fuchsia-300 to-purple-200 bg-clip-text text-transparent">
+                                <span className="bg-gradient-to-r from-[#C8DB8A] via-[#FFF8B9] to-[#AFCB63] bg-clip-text text-transparent">
                                     meaningful together.
                                 </span>
                             </h2>
 
-                            <p className="mt-6 max-w-md text-[0.96rem] leading-7 text-white/70 sm:text-lg">
+                            <p className="mt-6 max-w-md text-[0.96rem] leading-7 text-[#EFEDE6]/70 sm:text-lg">
                                 For collaborations, freelance work, or project
                                 ideas, these are the places I actually check.
                             </p>
 
                             <a
                                 href="mailto:gln.decilos@gmail.com"
-                                className="group mt-8 inline-flex items-center gap-2 text-sm font-bold text-violet-200 transition hover:gap-3 hover:text-violet-100"
+                                className="group mt-8 inline-flex items-center gap-2 text-sm font-bold text-[#DDE7B7] transition hover:gap-3 hover:text-[#EEF2D5]"
                             >
                                 Send an email
                                 <ArrowUpRightIcon className="size-4 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
@@ -176,7 +176,7 @@ export default function ContactSection() {
                                     className="group flex items-center justify-between gap-4 border-b border-white/15 py-5 transition sm:py-6"
                                 >
                                     <span className="flex min-w-0 items-center gap-3.5">
-                                        <span className="grid size-10 shrink-0 place-items-center rounded-full border border-white/12 bg-white/[0.055] text-violet-200 transition duration-300 group-hover:scale-110 group-hover:border-violet-200/45 group-hover:bg-violet-300 group-hover:text-[#160a24]">
+                                        <span className="grid size-10 shrink-0 place-items-center rounded-full border border-white/12 bg-[#EFEDE6]/[0.055] text-[#DDE7B7] transition duration-300 group-hover:scale-110 group-hover:border-[#DDE7B7]/45 group-hover:bg-[#C8DB8A] group-hover:text-[#1B2116]">
                                             <PlatformIcon
                                                 type={social.icon}
                                                 className="size-[1.1rem]"
@@ -184,17 +184,17 @@ export default function ContactSection() {
                                         </span>
 
                                         <span className="min-w-0">
-                                            <span className="block text-base font-bold tracking-[-0.025em] text-white">
+                                            <span className="block text-base font-bold tracking-[-0.025em] text-[#EFEDE6]">
                                                 {social.name}
                                             </span>
 
-                                            <span className="mt-0.5 block truncate text-sm text-white/52">
+                                            <span className="mt-0.5 block truncate text-sm text-[#EFEDE6]/52">
                                                 {social.handle}
                                             </span>
                                         </span>
                                     </span>
 
-                                    <span className="grid size-10 shrink-0 place-items-center rounded-full border border-white/10 bg-white/[0.035] text-white/45 transition duration-300 group-hover:translate-x-1 group-hover:border-violet-200/35 group-hover:bg-violet-300 group-hover:text-[#160a24]">
+                                    <span className="grid size-10 shrink-0 place-items-center rounded-full border border-white/10 bg-[#EFEDE6]/[0.035] text-[#EFEDE6]/45 transition duration-300 group-hover:translate-x-1 group-hover:border-[#DDE7B7]/35 group-hover:bg-[#C8DB8A] group-hover:text-[#1B2116]">
                                         <ArrowUpRightIcon className="size-4" />
                                     </span>
                                 </a>

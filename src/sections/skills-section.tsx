@@ -31,8 +31,8 @@ export default function SkillsSection() {
         {
             name: "UI/UX Design",
             icon: <LayoutDashboardIcon className="size-4" />,
-            iconClass: "text-violet-200",
-            iconSurface: "bg-violet-400/15",
+            iconClass: "text-[#DDE7B7]",
+            iconSurface: "bg-[#86A52A]/15",
         },
         {
             name: "Figma",
@@ -43,14 +43,14 @@ export default function SkillsSection() {
         {
             name: "Wireframing",
             icon: <PenToolIcon className="size-4" />,
-            iconClass: "text-sky-300",
-            iconSurface: "bg-sky-400/15",
+            iconClass: "text-[#FFF8B9]",
+            iconSurface: "bg-[#558203]/18",
         },
         {
             name: "Prototyping",
             icon: <MousePointerClickIcon className="size-4" />,
-            iconClass: "text-violet-200",
-            iconSurface: "bg-violet-400/15",
+            iconClass: "text-[#DDE7B7]",
+            iconSurface: "bg-[#86A52A]/15",
         },
         {
             name: "HTML",
@@ -61,8 +61,8 @@ export default function SkillsSection() {
         {
             name: "CSS",
             icon: <PaletteIcon className="size-4" />,
-            iconClass: "text-[#59A8E8]",
-            iconSurface: "bg-[#1572B6]/15",
+            iconClass: "text-[#FFF8B9]",
+            iconSurface: "bg-[#558203]/18",
         },
         {
             name: "JavaScript",
@@ -92,7 +92,7 @@ export default function SkillsSection() {
             name: "GitHub",
             icon: <GithubIcon className="size-4" />,
             iconClass: "text-zinc-100",
-            iconSurface: "bg-white/10",
+            iconSurface: "bg-[#EFEDE6]/10",
         },
         {
             name: "Laravel",
@@ -109,70 +109,70 @@ export default function SkillsSection() {
         {
             name: "Python",
             icon: <Code2Icon className="size-4" />,
-            iconClass: "text-[#65A7D7]",
-            iconSurface: "bg-[#3776AB]/15",
+            iconClass: "text-[#FFF8B9]",
+            iconSurface: "bg-[#558203]/18",
         },
         {
             name: "Tailwind",
             icon: <WindIcon className="size-4" />,
-            iconClass: "text-[#38BDF8]",
-            iconSurface: "bg-[#38BDF8]/15",
+            iconClass: "text-[#DDE7B7]",
+            iconSurface: "bg-[#558203]/18",
         },
         {
             name: "MySQL",
             icon: <DatabaseIcon className="size-4" />,
-            iconClass: "text-[#6EABD7]",
-            iconSurface: "bg-[#4479A1]/15",
+            iconClass: "text-[#DDE7B7]",
+            iconSurface: "bg-[#558203]/18",
         },
         {
             name: "Postgres",
             icon: <Table2Icon className="size-4" />,
-            iconClass: "text-[#8EAEFF]",
-            iconSurface: "bg-[#4169E1]/15",
+            iconClass: "text-[#DDE7B7]",
+            iconSurface: "bg-[#558203]/18",
         },
     ];
 
     return (
         <section
             id="skills"
-            className="relative isolate scroll-m-28 overflow-hidden bg-[#08050d] py-24 text-white sm:py-32"
+            className="relative isolate scroll-m-28 overflow-hidden bg-[#10130D] py-24 text-[#EFEDE6] sm:py-32"
         >
             <div aria-hidden="true" className="absolute inset-0 -z-20">
-                <div className="absolute inset-0 bg-[#08050d]" />
+                <div className="absolute inset-0 bg-[#10130D]" />
 
-                <div className="absolute -left-44 -top-44 size-[38rem] rounded-full bg-[#4c1d63]/60 blur-[130px]" />
+                <div className="absolute -left-44 -top-44 size-[38rem] rounded-full bg-[#558203]/45 blur-[130px]" />
 
-                <div className="absolute left-1/2 top-[12%] size-[44rem] -translate-x-1/2 rounded-full bg-[#673a83]/45 blur-[150px]" />
+                <div className="absolute left-1/2 top-[12%] size-[44rem] -translate-x-1/2 rounded-full bg-[#86A52A]/28 blur-[150px]" />
 
-                <div className="absolute -right-44 top-[18%] size-[36rem] rounded-full bg-[#7a235d]/40 blur-[145px]" />
+                <div className="absolute -right-44 top-[18%] size-[36rem] rounded-full bg-[#FFF8B9]/14 blur-[145px]" />
 
-                <div className="absolute bottom-[-20rem] left-[18%] size-[48rem] rounded-full bg-[#241136]/70 blur-[170px]" />
+                <div className="absolute bottom-[-20rem] left-[18%] size-[48rem] rounded-full bg-[#070A06]/85 blur-[170px]" />
 
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,transparent_0%,rgba(5,2,9,0.18)_50%,rgba(0,0,0,0.92)_100%)]" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,transparent_0%,rgba(3,5,2,0.12)_50%,rgba(0,0,0,0.96)_100%)]" />
             </div>
 
             <div
                 aria-hidden="true"
-                className="absolute inset-0 -z-10 bg-white/[0.015] backdrop-blur-[2px]"
+                className="absolute inset-0 -z-10 bg-[#FFF8B9]/[0.018] backdrop-blur-[2px]"
             />
 
             <div className="section-shell relative z-10">
                 <Reveal className="mb-14 flex flex-col justify-between gap-6 sm:mb-16 sm:flex-row sm:items-end">
                     <div>
-                        <div className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/[0.045] px-4 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-white/85 backdrop-blur-md">
-                            <Code2Icon className="size-3.5 text-violet-200" />
+                        <div className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-[#EFEDE6]/[0.045] px-4 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-[#EFEDE6]/85 backdrop-blur-md">
+                            <Code2Icon className="size-3.5 text-[#DDE7B7]" />
                             Skills
                         </div>
 
-                        <h2 className="mt-6 max-w-3xl text-4xl font-bold leading-[0.98] tracking-[-0.065em] text-white sm:text-5xl lg:text-6xl">
+                        <h2 className="mt-6 max-w-3xl text-4xl font-bold leading-[0.98] tracking-[-0.065em] text-[#EFEDE6] sm:text-5xl lg:text-6xl">
                             Tools I use to create{" "}
-                            <span className="bg-gradient-to-r from-violet-300 via-fuchsia-300 to-purple-200 bg-clip-text text-transparent">
+                            <span className="bg-gradient-to-r from-[#DDE7B7] via-[#FFF8B9] to-[#C8DB8A] bg-clip-text text-transparent">
                                 better digital experiences.
                             </span>
                         </h2>
                     </div>
 
-                    <p className="max-w-md text-[0.96rem] leading-7 text-white/70 sm:text-right">
+                    <p className="max-w-md text-[0.96rem] leading-7 text-[#EFEDE6]/70 sm:text-right">
                         A focused toolkit for designing clean interfaces,
                         building responsive websites, and translating ideas into
                         polished, practical digital products.
@@ -184,7 +184,7 @@ export default function SkillsSection() {
                         {skills.map((skill) => (
                             <div
                                 key={skill.name}
-                                className="group inline-flex min-w-[10.5rem] items-center justify-center gap-2.5 rounded-full border border-white/20 bg-black/15 px-5 py-3 text-sm font-semibold text-white shadow-[0_10px_28px_rgba(0,0,0,0.18)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-violet-300/55 hover:bg-white/[0.08] hover:shadow-[0_18px_34px_rgba(0,0,0,0.35)]"
+                                className="group inline-flex min-w-[10.5rem] items-center justify-center gap-2.5 rounded-full border border-white/20 bg-black/15 px-5 py-3 text-sm font-semibold text-[#EFEDE6] shadow-[0_10px_28px_rgba(0,0,0,0.18)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-[#C8DB8A]/55 hover:bg-[#EFEDE6]/[0.08] hover:shadow-[0_18px_34px_rgba(0,0,0,0.35)]"
                             >
                                 <span
                                     className={`grid size-8 place-items-center rounded-full ${skill.iconSurface} ${skill.iconClass} transition-transform duration-300 group-hover:scale-110`}

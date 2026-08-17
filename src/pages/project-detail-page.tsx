@@ -40,7 +40,7 @@ function SectionBlock({ title, children }: { title: string; children: ReactNode 
 
 function StatCard({ label, value, icon }: { label: string; value: string; icon: ReactNode }) {
     return (
-        <div className="rounded-xl border border-zinc-200 bg-white p-4 transition hover:border-zinc-300 dark:border-zinc-800 dark:bg-zinc-900/50">
+        <div className="rounded-xl border border-zinc-200 bg-[#EFEDE6] p-4 transition hover:border-zinc-300 dark:border-zinc-800 dark:bg-zinc-900/50">
             <div className="flex items-start justify-between">
                 <div>
                     <p className="text-sm text-zinc-500 dark:text-zinc-400">{label}</p>
@@ -98,7 +98,7 @@ function ImageModal({
         >
             <button
                 onClick={onClose}
-                className="absolute right-4 top-4 z-10 cursor-pointer rounded-full bg-white/10 p-2 text-white transition hover:bg-white/20 md:right-6 md:top-6"
+                className="absolute right-4 top-4 z-10 cursor-pointer rounded-full bg-[#EFEDE6]/10 p-2 text-[#EFEDE6] transition hover:bg-[#EFEDE6]/20 md:right-6 md:top-6"
             >
                 <XIcon className="size-5" />
             </button>
@@ -108,7 +108,7 @@ function ImageModal({
                     e.stopPropagation();
                     onPrev();
                 }}
-                className="absolute left-4 z-10 cursor-pointer rounded-full bg-white/10 p-2 text-white transition hover:bg-white/20 disabled:opacity-30 md:left-6"
+                className="absolute left-4 z-10 cursor-pointer rounded-full bg-[#EFEDE6]/10 p-2 text-[#EFEDE6] transition hover:bg-[#EFEDE6]/20 disabled:opacity-30 md:left-6"
                 disabled={currentIndex === 0}
             >
                 <ChevronLeftIcon className="size-6" />
@@ -119,7 +119,7 @@ function ImageModal({
                     e.stopPropagation();
                     onNext();
                 }}
-                className="absolute right-4 z-10 cursor-pointer rounded-full bg-white/10 p-2 text-white transition hover:bg-white/20 disabled:opacity-30 md:right-6"
+                className="absolute right-4 z-10 cursor-pointer rounded-full bg-[#EFEDE6]/10 p-2 text-[#EFEDE6] transition hover:bg-[#EFEDE6]/20 disabled:opacity-30 md:right-6"
                 disabled={currentIndex === images.length - 1}
             >
                 <ChevronRightIcon className="size-6" />
@@ -134,10 +134,10 @@ function ImageModal({
                     alt={images[currentIndex].alt}
                     className="max-h-[85vh] max-w-[85vw] object-contain"
                 />
-                <p className="mt-3 text-center text-sm text-white/80">
+                <p className="mt-3 text-center text-sm text-[#EFEDE6]/80">
                     {images[currentIndex].alt}
                 </p>
-                <p className="mt-1 text-center text-xs text-white/50">
+                <p className="mt-1 text-center text-xs text-[#EFEDE6]/50">
                     {currentIndex + 1} of {images.length}
                 </p>
             </div>
@@ -185,14 +185,14 @@ export default function ProjectDetailPage() {
 
     if (!project) {
         return (
-            <main className="min-h-screen bg-white px-4 py-24 dark:bg-zinc-950">
+            <main className="min-h-screen bg-[#EFEDE6] px-4 py-24 dark:bg-zinc-950">
                 <div className="mx-auto max-w-2xl text-center">
                     <div className="rounded-full bg-zinc-100 p-3 text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400 mx-auto w-fit">
                         <FolderKanbanIcon className="size-6" />
                     </div>
                     <h1 className="mt-4 text-2xl font-semibold text-zinc-900 dark:text-zinc-100">Project not found</h1>
                     <p className="mt-2 text-zinc-600 dark:text-zinc-400">The project you're looking for doesn't exist or has been moved.</p>
-                    <Link to="/#projects" className="mt-6 inline-flex cursor-pointer items-center gap-2 rounded-lg bg-zinc-900 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-zinc-800 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-200">
+                    <Link to="/#projects" className="mt-6 inline-flex cursor-pointer items-center gap-2 rounded-lg bg-zinc-900 px-5 py-2.5 text-sm font-medium text-[#EFEDE6] transition hover:bg-zinc-800 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-200">
                         <ArrowLeftIcon className="size-4" />
                         Back to projects
                     </Link>
@@ -231,7 +231,7 @@ export default function ProjectDetailPage() {
     }
 
     return (
-        <main className="bg-white transition-colors dark:bg-zinc-950">
+        <main className="bg-[#EFEDE6] transition-colors dark:bg-zinc-950">
             {modalOpen && currentImageSet.length > 0 && (
                 <ImageModal
                     images={currentImageSet}
@@ -243,7 +243,7 @@ export default function ProjectDetailPage() {
             )}
 
             {/* Hero Section */}
-            <div className="border-b border-zinc-200 bg-gradient-to-b from-zinc-50 to-white dark:border-zinc-800 dark:from-zinc-900/50 dark:to-zinc-950">
+            <div className="border-b border-zinc-200 bg-gradient-to-b from-zinc-50 to-[#EFEDE6] dark:border-zinc-800 dark:from-zinc-900/50 dark:to-zinc-950">
                 <div className="mx-auto max-w-5xl px-4 py-12 md:px-8 md:py-16 lg:py-20">
                     {/* Back Button */}
                     <button
@@ -257,13 +257,13 @@ export default function ProjectDetailPage() {
 
                     {/* Category */}
                    {/* Category */}
-                <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-violet-50 px-3 py-1 text-xs font-medium text-violet-700 dark:bg-violet-400/10 dark:text-violet-300">
+                <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-[#F5F7E8] px-3 py-1 text-xs font-medium text-[#385702] dark:bg-[#86A52A]/10 dark:text-[#C8DB8A]">
                     <FolderKanbanIcon className="size-3" />
                     {project.category}
                 </div>
                     {/* Title and Image Side by Side */}
                     <div className="flex items-start gap-5">
-                        <div className="shrink-0 overflow-hidden rounded-xl border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900/50">
+                        <div className="shrink-0 overflow-hidden rounded-xl border border-zinc-200 bg-[#EFEDE6] shadow-sm dark:border-zinc-800 dark:bg-zinc-900/50">
                             <img
                                 src={project.image}
                                 alt={`${project.title} preview`}
@@ -297,7 +297,7 @@ export default function ProjectDetailPage() {
             </div>
 
             {/* Navigation Tabs */}
-            <div className="sticky top-0 z-10 border-b border-zinc-200 bg-white/80 backdrop-blur-md dark:border-zinc-800 dark:bg-zinc-950/80">
+            <div className="sticky top-0 z-10 border-b border-zinc-200 bg-[#EFEDE6]/80 backdrop-blur-md dark:border-zinc-800 dark:bg-zinc-950/80">
                 <div className="mx-auto max-w-5xl overflow-x-auto px-4 md:px-8">
                     <div className="flex gap-1">
                         {navItems.map((item) => (
@@ -309,7 +309,7 @@ export default function ProjectDetailPage() {
                                 }}
                                 className={`flex cursor-pointer items-center gap-1.5 px-3 py-3 text-sm font-medium transition-all whitespace-nowrap md:px-4 ${
                                     activeSection === item.id
-                                        ? "border-b-2 border-violet-500 text-violet-700 dark:border-violet-300 dark:text-violet-200"
+                                        ? "border-b-2 border-[#F5F7E8]0 text-[#385702] dark:border-[#C8DB8A] dark:text-[#DDE7B7]"
                                         : "text-zinc-500 hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-zinc-200"
                                 }`}
                             >
@@ -343,7 +343,7 @@ export default function ProjectDetailPage() {
                                 <div className="space-y-4">
                                     {project.approach.map((item, idx) => (
                                         <div key={idx} className="flex gap-4">
-                                            <div className="flex size-7 shrink-0 items-center justify-center rounded-full bg-violet-100 text-xs font-semibold text-violet-700 dark:bg-violet-400/10 dark:text-violet-200">
+                                            <div className="flex size-7 shrink-0 items-center justify-center rounded-full bg-[#EEF2D5] text-xs font-semibold text-[#385702] dark:bg-[#86A52A]/10 dark:text-[#DDE7B7]">
                                                 {idx + 1}
                                             </div>
                                             <p className="flex-1 text-zinc-700 dark:text-zinc-300">{item}</p>
@@ -359,7 +359,7 @@ export default function ProjectDetailPage() {
                                 <div className="grid gap-2.5 sm:grid-cols-2">
                                     {project.features.map((feature) => (
                                         <div key={feature} className="flex items-start gap-2.5 rounded-lg border border-zinc-200 p-3 dark:border-zinc-800">
-                                            <CheckCircle2Icon className="mt-0.5 size-4 shrink-0 text-violet-600 dark:text-violet-300" />
+                                            <CheckCircle2Icon className="mt-0.5 size-4 shrink-0 text-[#466D02] dark:text-[#C8DB8A]" />
                                             <span className="text-sm text-zinc-700 dark:text-zinc-300">{feature}</span>
                                         </div>
                                     ))}
@@ -370,9 +370,9 @@ export default function ProjectDetailPage() {
                         {/* Outcome */}
                         <section id="outcome" className="scroll-m-20">
                             <SectionBlock title="Outcome">
-                                <div className="rounded-xl bg-gradient-to-r from-violet-50 to-fuchsia-50 p-5 dark:from-violet-500/10 dark:to-fuchsia-500/10">
+                                <div className="rounded-xl bg-gradient-to-r from-[#F5F7E8] to-[#FFFBE0] p-5 dark:from-[#EAF0CF]/10 dark:to-[#FFFBE0]0/10">
                                     <div className="flex gap-3">
-                                        <RocketIcon className="mt-0.5 size-5 shrink-0 text-violet-600 dark:text-violet-300" />
+                                        <RocketIcon className="mt-0.5 size-5 shrink-0 text-[#466D02] dark:text-[#C8DB8A]" />
                                         <p className="text-zinc-700 dark:text-zinc-300">{project.outcome}</p>
                                     </div>
                                 </div>
@@ -394,7 +394,7 @@ export default function ProjectDetailPage() {
                                                 <button
                                                     key={idx}
                                                     onClick={() => openModal(screenshotImages, idx)}
-                                                    className="group cursor-pointer overflow-hidden rounded-xl border border-zinc-200 bg-white transition hover:border-zinc-300 hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900/50 dark:hover:border-zinc-700"
+                                                    className="group cursor-pointer overflow-hidden rounded-xl border border-zinc-200 bg-[#EFEDE6] transition hover:border-zinc-300 hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900/50 dark:hover:border-zinc-700"
                                                 >
                                                     <div className="aspect-video bg-zinc-100 dark:bg-zinc-800">
                                                         <img
@@ -429,7 +429,7 @@ export default function ProjectDetailPage() {
                                                 <button
                                                     key={idx}
                                                     onClick={() => openModal(projectPhotoImages, idx)}  // FIXED: changed from screenshotImages to projectPhotoImages
-                                                    className="group cursor-pointer overflow-hidden rounded-xl border border-zinc-200 bg-white transition hover:border-zinc-300 hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900/50 dark:hover:border-zinc-700"
+                                                    className="group cursor-pointer overflow-hidden rounded-xl border border-zinc-200 bg-[#EFEDE6] transition hover:border-zinc-300 hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900/50 dark:hover:border-zinc-700"
                                                 >
                                                     <div className="aspect-video bg-zinc-100 dark:bg-zinc-800">
                                                         <img
@@ -454,7 +454,7 @@ export default function ProjectDetailPage() {
                     <div className="lg:col-span-1">
                         <div className="sticky top-24 space-y-5">
                             {/* Project Info */}
-                            <div className="rounded-xl border border-zinc-200 bg-white p-5 dark:border-zinc-800 dark:bg-zinc-900/50">
+                            <div className="rounded-xl border border-zinc-200 bg-[#EFEDE6] p-5 dark:border-zinc-800 dark:bg-zinc-900/50">
                                 <h3 className="mb-3 text-sm font-semibold uppercase tracking-wide text-zinc-500 dark:text-zinc-400">
                                     Project Info
                                 </h3>
@@ -480,7 +480,7 @@ export default function ProjectDetailPage() {
 
                             {/* Links */}
                             {hasProjectLinks && (
-                                <div className="rounded-xl border border-zinc-200 bg-white p-5 dark:border-zinc-800 dark:bg-zinc-900/50">
+                                <div className="rounded-xl border border-zinc-200 bg-[#EFEDE6] p-5 dark:border-zinc-800 dark:bg-zinc-900/50">
                                     <h3 className="mb-3 text-sm font-semibold uppercase tracking-wide text-zinc-500 dark:text-zinc-400">
                                         Links
                                     </h3>
@@ -532,7 +532,7 @@ export default function ProjectDetailPage() {
                             )}
 
                             {/* Tech Stack Summary */}
-                            <div className="rounded-xl border border-zinc-200 bg-white p-5 dark:border-zinc-800 dark:bg-zinc-900/50">
+                            <div className="rounded-xl border border-zinc-200 bg-[#EFEDE6] p-5 dark:border-zinc-800 dark:bg-zinc-900/50">
                                 <h3 className="mb-3 text-sm font-semibold uppercase tracking-wide text-zinc-500 dark:text-zinc-400">
                                     Technologies
                                 </h3>
@@ -555,13 +555,13 @@ export default function ProjectDetailPage() {
                     <div className="mx-auto max-w-5xl px-4 md:px-8">
                         <div className="mb-6 flex items-center justify-between">
                             <div className="flex items-center gap-2">
-                                <SparklesIcon className="size-4 text-violet-600 dark:text-violet-300" />
+                                <SparklesIcon className="size-4 text-[#466D02] dark:text-[#C8DB8A]" />
                                 <h2 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100">More Projects</h2>
                             </div>
                             <Link
                                 to="/#projects"
                                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-                                className="cursor-pointer text-sm font-medium text-violet-600 transition hover:text-violet-700 dark:text-violet-300 dark:hover:text-violet-200"
+                                className="cursor-pointer text-sm font-medium text-[#466D02] transition hover:text-[#385702] dark:text-[#C8DB8A] dark:hover:text-[#DDE7B7]"
                             >
                                 View all →
                             </Link>
@@ -572,12 +572,12 @@ export default function ProjectDetailPage() {
                                     key={item.slug}
                                     to={`/projects/${item.slug}`}
                                     onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-                                    className="group cursor-pointer rounded-xl border border-zinc-200 bg-white p-4 transition-all hover:border-zinc-300 hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900/50 dark:hover:border-zinc-700"
+                                    className="group cursor-pointer rounded-xl border border-zinc-200 bg-[#EFEDE6] p-4 transition-all hover:border-zinc-300 hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900/50 dark:hover:border-zinc-700"
                                 >
-                                    <p className="text-xs font-medium text-violet-600 dark:text-violet-300">{item.category}</p>
+                                    <p className="text-xs font-medium text-[#466D02] dark:text-[#C8DB8A]">{item.category}</p>
                                     <h3 className="mt-1 text-sm font-semibold text-zinc-900 dark:text-zinc-100">{item.shortTitle}</h3>
                                     <p className="mt-1 text-xs text-zinc-600 dark:text-zinc-400 line-clamp-2">{item.summary}</p>
-                                    <span className="mt-2 inline-flex items-center gap-1 text-xs font-medium text-violet-600 transition group-hover:gap-1.5 dark:text-violet-300">
+                                    <span className="mt-2 inline-flex items-center gap-1 text-xs font-medium text-[#466D02] transition group-hover:gap-1.5 dark:text-[#C8DB8A]">
                                         Read more
                                         <ArrowUpRightIcon className="size-3" />
                                     </span>

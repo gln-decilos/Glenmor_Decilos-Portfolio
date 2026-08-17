@@ -64,7 +64,7 @@ function CertificateModal({ certificate, onClose }: { certificate: Certificate; 
             <div className="w-full max-w-5xl overflow-hidden rounded-[1.5rem] border border-white/12 bg-[var(--canvas)] shadow-2xl" onClick={(event) => event.stopPropagation()} role="dialog" aria-modal="true" aria-label={certificate.title}>
                 <div className="flex items-start justify-between gap-4 border-b border-black/8 p-5 dark:border-white/10 sm:p-6">
                     <div className="flex min-w-0 items-center gap-3">
-                        <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-white p-1.5">
+                        <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-[#EFEDE6] p-1.5">
                             <img src={certificate.logo} alt={`${certificate.issuer} logo`} className="h-full w-full object-contain" />
                         </span>
                         <div className="min-w-0">
@@ -72,12 +72,12 @@ function CertificateModal({ certificate, onClose }: { certificate: Certificate; 
                             <p className="mt-1 text-sm text-zinc-500 dark:text-zinc-400">{certificate.issuer}</p>
                         </div>
                     </div>
-                    <button type="button" onClick={onClose} className="grid size-10 shrink-0 place-items-center rounded-full border border-black/10 text-zinc-700 transition hover:bg-zinc-950 hover:text-white dark:border-white/10 dark:text-zinc-200 dark:hover:bg-white dark:hover:text-zinc-950" aria-label="Close certificate preview">
+                    <button type="button" onClick={onClose} className="grid size-10 shrink-0 place-items-center rounded-full border border-black/10 text-zinc-700 transition hover:bg-zinc-950 hover:text-[#EFEDE6] dark:border-white/10 dark:text-zinc-200 dark:hover:bg-[#EFEDE6] dark:hover:text-zinc-950" aria-label="Close certificate preview">
                         <XIcon className="size-4" />
                     </button>
                 </div>
-                <div className="bg-black/[0.025] p-4 dark:bg-white/[0.025] sm:p-6">
-                    <img src={certificate.image} alt={`${certificate.title} certificate`} className="max-h-[68vh] w-full rounded-xl border border-black/8 bg-white object-contain shadow-sm dark:border-white/10" />
+                <div className="bg-black/[0.025] p-4 dark:bg-[#EFEDE6]/[0.025] sm:p-6">
+                    <img src={certificate.image} alt={`${certificate.title} certificate`} className="max-h-[68vh] w-full rounded-xl border border-black/8 bg-[#EFEDE6] object-contain shadow-sm dark:border-white/10" />
                 </div>
                 <div className="flex flex-col gap-3 border-t border-black/8 p-5 text-sm sm:flex-row sm:items-center sm:justify-between sm:p-6 dark:border-white/10">
                     <p className="max-w-2xl leading-6 text-zinc-600 dark:text-zinc-300">{certificate.description}</p>
@@ -104,7 +104,7 @@ function CertificateCard({ certificate, onView }: { certificate: Certificate; on
                 <div className="flex flex-1 flex-col p-5 sm:p-6">
                     {/* Logo placed above title - left aligned */}
                     <div className="mb-3">
-                        <span className="grid size-12 place-items-center rounded-xl border border-black/8 bg-white p-1.5 dark:border-white/10">
+                        <span className="grid size-12 place-items-center rounded-xl border border-black/8 bg-[#EFEDE6] p-1.5 dark:border-white/10">
                             <img src={certificate.logo} alt={`${certificate.issuer} logo`} className="h-full w-full object-contain" />
                         </span>
                     </div>
@@ -143,20 +143,20 @@ export default function CertificatesSection() {
                 <div className="section-shell">
                     <Reveal className="mb-10 flex flex-col justify-between gap-6 sm:mb-12 sm:flex-row sm:items-end">
     <div>
-        <div className="inline-flex items-center gap-2 rounded-full border border-[#3a2450] bg-[#21102f] px-4 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-violet-200 shadow-sm backdrop-blur-md dark:border-white/15 dark:bg-white/[0.045] dark:text-violet-200">
-            <BadgeCheckIcon className="size-3.5 text-violet-200" />
+        <div className="inline-flex items-center gap-2 rounded-full border border-[#39452A] bg-[#26301A] px-4 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-[#DDE7B7] shadow-sm backdrop-blur-md dark:border-white/15 dark:bg-[#EFEDE6]/[0.045] dark:text-[#DDE7B7]">
+            <BadgeCheckIcon className="size-3.5 text-[#DDE7B7]" />
             Credentials
         </div>
 
-        <h2 className="mt-6 max-w-3xl text-4xl font-bold leading-[0.98] tracking-[-0.065em] text-zinc-950 sm:text-5xl lg:text-6xl dark:text-white">
+        <h2 className="mt-6 max-w-3xl text-4xl font-bold leading-[0.98] tracking-[-0.065em] text-zinc-950 sm:text-5xl lg:text-6xl dark:text-[#EFEDE6]">
             Learning, applied and{" "}
-            <span className="bg-gradient-to-r from-violet-500 via-fuchsia-500 to-purple-400 bg-clip-text text-transparent dark:from-violet-300 dark:via-fuchsia-300 dark:to-purple-200">
+            <span className="accent-heading">
                 recognized.
             </span>
         </h2>
     </div>
 
-    <p className="max-w-md text-[0.96rem] leading-7 text-zinc-600 sm:text-right dark:text-white/70">
+    <p className="max-w-md text-[0.96rem] leading-7 text-zinc-600 sm:text-right dark:text-[#EFEDE6]/70">
         A selection of certifications and recognitions that reflect my
         continued learning and contribution to meaningful projects.
     </p>

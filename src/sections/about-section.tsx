@@ -7,20 +7,20 @@ export default function AboutSection() {
             <div className="section-shell">
                 <Reveal className="mb-12 flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
     <div>
-        <div className="inline-flex items-center gap-2 rounded-full border border-[#3a2450] bg-[#21102f] px-4 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-violet-200 shadow-sm backdrop-blur-md dark:border-white/15 dark:bg-white/[0.045] dark:text-violet-200">
-            <UserRoundIcon className="size-3.5 text-violet-200" />
+        <div className="inline-flex items-center gap-2 rounded-full border border-[#39452A] bg-[#26301A] px-4 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-[#DDE7B7] shadow-sm backdrop-blur-md dark:border-white/15 dark:bg-[#EFEDE6]/[0.045] dark:text-[#DDE7B7]">
+            <UserRoundIcon className="size-3.5 text-[#DDE7B7]" />
             About me
         </div>
 
-        <h2 className="mt-6 max-w-3xl text-4xl font-bold leading-[0.98] tracking-[-0.065em] text-zinc-950 sm:text-5xl lg:text-6xl dark:text-white">
+        <h2 className="mt-6 max-w-3xl text-4xl font-bold leading-[0.98] tracking-[-0.065em] text-zinc-950 sm:text-5xl lg:text-6xl dark:text-[#EFEDE6]">
             A practical thinker with a{" "}
-            <span className="bg-gradient-to-r from-violet-500 via-fuchsia-500 to-purple-400 bg-clip-text text-transparent dark:from-violet-300 dark:via-fuchsia-300 dark:to-purple-200">
+            <span className="accent-heading">
                 creative eye.
             </span>
         </h2>
     </div>
 
-    <p className="max-w-md text-[0.96rem] leading-7 text-zinc-600 sm:text-right dark:text-white/70">
+    <p className="max-w-md text-[0.96rem] leading-7 text-zinc-600 sm:text-right dark:text-[#EFEDE6]/70">
         A UI/UX designer and web developer focused on creating clean,
         functional, and user-centered digital experiences.
     </p>
@@ -36,8 +36,8 @@ export default function AboutSection() {
                                     className="aspect-[4/5] w-full object-cover transition duration-700 hover:scale-[1.025]"
                                 />
                                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/65 to-transparent px-5 pb-5 pt-16">
-                                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/65">Glenmor A. Decilos</p>
-                                    <p className="mt-1 text-sm font-semibold text-white">UI/UX Designer &amp; Web Developer</p>
+                                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#EFEDE6]/65">Glenmor A. Decilos</p>
+                                    <p className="mt-1 text-sm font-semibold text-[#EFEDE6]">UI/UX Designer &amp; Web Developer</p>
                                 </div>
                             </div>
                         </div>
