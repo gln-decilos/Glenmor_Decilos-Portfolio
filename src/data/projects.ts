@@ -91,10 +91,18 @@ export const projects: Project[] = [
             { src: "/projects/readbee-web-4.png", alt: "ReadBee Web App - My Team", type: "screenshot" },
             { src: "/projects/readbee-web-1.png", alt: "ReadBee Web App - Dashboard", type: "screenshot" },
             { src: "/projects/readbee-web-2.png", alt: "ReadBee Web App - Assessment Calendar", type: "screenshot" },
+            { src: "/projects/readbee-mobile-design-cover-page.png", alt: "ReadBee Mobile App Figma Design - Cover Page", type: "screenshot" },
+            { src: "/projects/readbee-mobile-and-tablet-frames.png", alt: "ReadBee Mobile App Figma Design - Wireframes", type: "screenshot" },
+            { src: "/projects/readbee-figma-design-guide.png", alt: "ReadBee Figma Design Guide", type: "screenshot" },
+            { src: "/projects/readbee-tablet-design-1.png", alt: "ReadBee Tablet Design - Dashboard", type: "screenshot" },
+            { src: "/projects/readbee-tablet-design-2.png", alt: "ReadBee Tablet Design - Class Records", type: "screenshot" },
+            { src: "/projects/readbee-tablet-design-3.png", alt: "ReadBee Tablet Design - Reading Materials", type: "screenshot" },
+            { src: "/projects/readbee-mobile-design.png", alt: "ReadBee Mobile App Figma Designs", type: "screenshot" },
             { src: "/projects/readbee-capstone-1.jpg", alt: "ReadBee Demonstration with DepEd teachers", type: "capstone" },
             { src: "/projects/readbee-capstone-2.jpg", alt: "ReadBee Final Defense 2025", type: "capstone" },
             { src: "/projects/readbee-capstone-4.jpg", alt: "With my team after successfully completing our final defense.", type: "capstone" },
             { src: "/projects/readbee-capstone-3.jpg", alt: "With Our Panelist", type: "capstone" },
+
 
         ],
         
