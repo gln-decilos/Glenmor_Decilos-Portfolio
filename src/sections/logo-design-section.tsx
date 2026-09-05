@@ -4,6 +4,7 @@ type LogoDesign = {
 };
 
 const logoDesigns: LogoDesign[] = [
+    { image: "/logo-designs/koda-logo.png", alt: "Koda logo design" },
     { image: "/logo-designs/readbee-logo.png", alt: "ReadBee logo design" },
     { image: "/logo-designs/moneypulse-logo.png", alt: "MoneyPulse logo design" },
     { image: "/logo-designs/pawcheck-logo.png", alt: "PawCheck logo design" },
