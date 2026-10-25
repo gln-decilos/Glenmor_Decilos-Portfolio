@@ -13,8 +13,6 @@ export default function ProjectsSection() {
     const [activeIndex, setActiveIndex] = useState(0);
 
     const project = projects[activeIndex];
-    const getProject = (offset: number) =>
-        projects[(activeIndex + offset + projects.length) % projects.length];
 
     if (!project) return null;
 
@@ -29,8 +27,6 @@ export default function ProjectsSection() {
     const detailHref = `/projects/${project.slug}`;
     const category = project.category ?? "Project";
     const year = project.year ?? "";
-    const nextProject = projects.length > 1 ? getProject(1) : null;
-
     const total = String(projects.length).padStart(2, "0");
     const current = String(activeIndex + 1).padStart(2, "0");
 
@@ -127,13 +123,10 @@ export default function ProjectsSection() {
                                         View case study
                                         <ArrowUpRightIcon className="h-4 w-4 transition-transform duration-200 group-hover/cta:-translate-y-0.5 group-hover/cta:translate-x-0.5" />
                                     </Link>
-
-                                    
                                 </div>
                             </div>
-
-                            
                         </div>
+
                         {/* Project preview */}
                         <div className="flex min-w-0 flex-col lg:col-span-7">
                             <Link
@@ -230,13 +223,9 @@ export default function ProjectsSection() {
                                     </div>
                                 </Reveal>
                             )}
-
-
                         </div>
-
                     </div>
                 </Reveal>
-
             </div>
         </section>
     );
