@@ -1,250 +1,120 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import {
-    ArrowLeftIcon,
-    ArrowRightIcon,
-    ArrowUpRightIcon,
-    SparklesIcon,
-} from "lucide-react";
-import { projects, type Project } from "../data/projects";
+import { ArrowUpRightIcon, FolderKanbanIcon } from "lucide-react";
+import { projects } from "../data/projects";
 import Reveal from "../components/reveal";
 
-const projectsPerPage = 3;
-
-function ProjectItem({
-    project,
-    index,
-}: {
-    project: Project;
-    index: number;
-}) {
-    const isReversed = index % 2 === 1;
-
-    return (
-        <Link
-            to={`/projects/${project.slug}`}
-            className="group block cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F5F7E8]0 focus-visible:ring-offset-4 dark:focus-visible:ring-[#C8DB8A] dark:focus-visible:ring-offset-zinc-950"
-            title={`View ${project.title}`}
-        >
-            <article className="relative grid gap-8 md:grid-cols-2 md:items-center md:gap-10 lg:gap-16">
-                {/* Project text */}
-                <div
-                    className={`relative z-20 ${
-                        isReversed ? "md:order-2" : "md:order-1"
-                    }`}
-                >
-                    <div
-                        className={`${
-                            isReversed
-                                ? "md:pl-8 lg:pl-12"
-                                : "md:pr-8 lg:pr-12"
-                        }`}
-                    >
-                        <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-[#F5F7E8] px-3 py-1 text-xs font-medium text-[#385702] dark:bg-[#86A52A]/10 dark:text-[#C8DB8A]">
-                            <SparklesIcon className="size-3" />
-                            {project.category}
-                        </div>
-
-                        <h3 className="max-w-lg text-2xl font-bold leading-[1.05] tracking-[-0.045em] text-zinc-950 sm:text-3xl dark:text-[#EFEDE6]">
-                            {project.title}
-                        </h3>
-                    </div>
-
-                    {/* Frosted-glass project description */}
-                    <div
-                        className={`relative mt-5 overflow-hidden rounded-[1.35rem] border border-white/65 bg-[#EFEDE6]/[0.42] p-5 shadow-[0_20px_50px_rgba(65,82,20,0.14)] backdrop-blur-2xl backdrop-saturate-150 transition duration-300 group-hover:border-[#C8DB8A]/65 group-hover:bg-[#EFEDE6]/[0.5] group-hover:shadow-[0_24px_55px_rgba(70,92,20,0.20)] dark:border-white/14 dark:bg-[rgba(15,20,10,0.72)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.34)] dark:group-hover:border-[#C8DB8A]/35 dark:group-hover:bg-[rgba(20,28,12,0.78)] ${
-                            isReversed
-                                ? "md:-ml-14 lg:-ml-20"
-                                : "md:-mr-14 lg:-mr-20"
-                        }`}
-                    >
-                        {/* Glass reflection */}
-                        <div
-                            aria-hidden="true"
-                            className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[#EFEDE6]/85 dark:bg-[#EFEDE6]/25"
-                        />
-
-                        {/* Glass sheen */}
-                        <div
-                            aria-hidden="true"
-                            className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/[0.18] via-transparent to-[#EAF0CF]/[0.04] dark:from-white/[0.05] dark:to-[#86A52A]/[0.06]"
-                        />
-
-                        <div className="relative z-10">
-                            <p className="text-sm leading-6 text-zinc-700 dark:text-[#EFEDE6]/75">
-                                {project.description}
-                            </p>
-
-                            <div className="mt-5 flex flex-wrap gap-2">
-                                {project.tags.map((tag) => (
-                                    <span
-                                        key={tag}
-                                        className="rounded-full border border-white/55 bg-[#EFEDE6]/[0.32] px-2.5 py-1 text-[10px] font-semibold text-zinc-700 transition-colors group-hover:border-[#C8DB8A]/60 group-hover:bg-[#F5F7E8]/55 group-hover:text-[#385702] dark:border-white/12 dark:bg-[#EFEDE6]/[0.055] dark:text-[#EFEDE6]/70 dark:group-hover:border-[#C8DB8A]/25 dark:group-hover:bg-[#86A52A]/10 dark:group-hover:text-[#DDE7B7]"
-                                    >
-                                        {tag}
-                                    </span>
-                                ))}
-                            </div>
-
-                            {/* Main project action */}
-                            <div className="mt-6 flex items-center justify-between border-t border-zinc-900/[0.08] pt-4 dark:border-white/10">
-                                <span className="text-xs font-bold uppercase tracking-[0.12em] text-[#385702] dark:text-[#DDE7B7]">
-                                    View case study
-                                </span>
-
-                                <span className="grid size-9 place-items-center rounded-full border border-[#C8DB8A]/70 bg-[#EAF0CF] text-[#EFEDE6] shadow-sm transition duration-300 group-hover:-translate-y-1 group-hover:scale-105 group-hover:bg-[#466D02] dark:border-[#DDE7B7]/30 dark:bg-[#C8DB8A] dark:text-[#1B2116]">
-                                    <ArrowUpRightIcon className="size-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Project image */}
-                <div
-                    className={`relative ${
-                        isReversed ? "md:order-1" : "md:order-2"
-                    }`}
-                >
-                    {/* Olive depth behind preview */}
-                    <div
-                        aria-hidden="true"
-                        className={`absolute -inset-4 rounded-[1.8rem] bg-gradient-to-br from-[#EAF0CF]/25 via-[#558203]/12 to-transparent blur-2xl transition duration-500 group-hover:from-[#EAF0CF]/35 group-hover:via-[#558203]/20 dark:from-[#EAF0CF]/30 dark:via-[#558203]/18 ${
-                            isReversed
-                                ? "translate-x-3 translate-y-3"
-                                : "-translate-x-3 translate-y-3"
-                        }`}
-                    />
-
-                    <div className="relative overflow-hidden rounded-2xl border border-zinc-200 bg-zinc-100 shadow-[0_18px_35px_rgba(65,82,20,0.14)] transition duration-500 group-hover:-translate-y-1 group-hover:border-[#DDE7B7] group-hover:shadow-[0_26px_50px_rgba(70,92,20,0.20)] dark:border-white/10 dark:bg-[#EFEDE6]/[0.04] dark:shadow-[0_18px_35px_rgba(0,0,0,0.32)] dark:group-hover:border-[#C8DB8A]/30">
-                        <div className="relative aspect-[16/10] overflow-hidden">
-                            <img
-                                src={project.image}
-                                alt={`${project.title} preview`}
-                                className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.035]"
-                            />
-
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent opacity-0 transition duration-300 group-hover:opacity-100" />
-                        </div>
-                    </div>
-                </div>
-            </article>
-        </Link>
-    );
-}
-
 export default function ProjectsSection() {
-    const [currentPage, setCurrentPage] = useState(0);
-    const pageCount = Math.ceil(projects.length / projectsPerPage);
+    const [activeIndex, setActiveIndex] = useState(0);
+    const project = projects[activeIndex];
+    const getProject = (offset: number) => projects[(activeIndex + offset + projects.length) % projects.length];
 
-    const visibleProjects = useMemo(() => {
-        const start = currentPage * projectsPerPage;
+    if (!project) return null;
 
-        return projects.slice(start, start + projectsPerPage);
-    }, [currentPage]);
-
-    const goToPreviousPage = () => {
-        setCurrentPage((page) => Math.max(page - 1, 0));
+    const goToPrevious = () => {
+        setActiveIndex((index) => (index - 1 + projects.length) % projects.length);
     };
 
-    const goToNextPage = () => {
-        setCurrentPage((page) => Math.min(page + 1, pageCount - 1));
+    const goToNext = () => {
+        setActiveIndex((index) => (index + 1) % projects.length);
     };
 
     return (
         <section id="projects" className="scroll-m-28 py-20 sm:py-28">
+            <style>{`
+                @keyframes workGalleryFade {
+                    from { opacity: .45; transform: scale(.985); }
+                    to { opacity: 1; transform: scale(1); }
+                }
+            `}</style>
             <div className="section-shell">
-                <Reveal className="mb-12 flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
+                <Reveal className="mb-10 flex flex-col justify-between gap-6 sm:mb-14 sm:flex-row sm:items-end">
                     <div>
-                        <div className="inline-flex items-center gap-2 rounded-full border border-[#39452A] bg-[#26301A] px-4 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-[#DDE7B7] shadow-sm backdrop-blur-md dark:border-white/15 dark:bg-[#EFEDE6]/[0.045] dark:text-[#DDE7B7]">
-                            <SparklesIcon className="size-3.5 text-[#DDE7B7]" />
-                            Featured Work
+                        <div className="inline-flex items-center gap-2 rounded-full border border-[#39452A] bg-[#26301A] px-4 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-[#DDE7B7] shadow-sm dark:border-white/15 dark:bg-[#EFEDE6]/[0.045]">
+                            <FolderKanbanIcon className="size-3.5" />
+                            Selected Projects
                         </div>
-
-                        <h2 className="mt-6 max-w-3xl text-4xl font-bold leading-[0.98] tracking-[-0.065em] text-zinc-950 sm:text-5xl lg:text-6xl dark:text-[#EFEDE6]">
-                            Selected{" "}
-                            <span className="accent-heading">
-                                Works.
-                            </span>
+                        <h2 className="mt-6 text-4xl font-bold leading-[0.98] tracking-[-0.065em] text-zinc-950 sm:text-5xl lg:text-6xl dark:text-[#EFEDE6]">
+                            A Collection of <span className="accent-heading"> <br></br>Projects.</span>
                         </h2>
                     </div>
-
                     <p className="max-w-md text-[0.96rem] leading-7 text-zinc-600 sm:text-right dark:text-[#EFEDE6]/70">
-                        A collection of work where design and development meet
-                        to create meaningful digital experiences.
+                        Each project reflects a thoughtful balance of visual design, practical functionality, and purposeful problem-solving.
                     </p>
                 </Reveal>
 
-                <div className="space-y-16 sm:space-y-20 lg:space-y-24">
-                    {visibleProjects.map((project, index) => (
-                        <Reveal key={project.slug} delay={index * 80}>
-                            <ProjectItem
-                                project={project}
-                                index={currentPage * projectsPerPage + index}
-                            />
-                        </Reveal>
-                    ))}
-                </div>
-
-                {pageCount > 1 && (
-                    <div className="mt-16 flex items-center justify-between border-t border-zinc-200 pt-8 dark:border-white/10">
-                        <p className="text-sm text-zinc-500 dark:text-[#EFEDE6]/50">
-                            Showing{" "}
-                            <span className="font-semibold text-zinc-800 dark:text-[#EFEDE6]/85">
-                                {currentPage * projectsPerPage + 1}–
-                                {Math.min(
-                                    (currentPage + 1) * projectsPerPage,
-                                    projects.length,
-                                )}
-                            </span>{" "}
-                            of {projects.length}
-                        </p>
-
-                        <div className="flex items-center gap-4">
-                            <button
-                                type="button"
-                                onClick={goToPreviousPage}
-                                disabled={currentPage === 0}
-                                className="grid size-10 place-items-center rounded-full border border-zinc-200 text-zinc-600 transition hover:border-[#C8DB8A] hover:bg-[#F5F7E8] hover:text-[#385702] disabled:cursor-not-allowed disabled:opacity-35 dark:border-white/10 dark:text-[#EFEDE6]/65 dark:hover:border-[#C8DB8A]/35 dark:hover:bg-[#86A52A]/10 dark:hover:text-[#DDE7B7]"
-                                aria-label="Previous projects"
-                            >
-                                <ArrowLeftIcon className="size-4" />
-                            </button>
-
-                            <div className="flex items-center gap-2">
-                                {Array.from({ length: pageCount }).map(
-                                    (_, index) => (
-                                        <button
-                                            key={index}
-                                            type="button"
-                                            onClick={() =>
-                                                setCurrentPage(index)
-                                            }
-                                            className={`h-2 rounded-full transition-all duration-300 ${
-                                                currentPage === index
-                                                    ? "w-7 bg-[#466D02] dark:bg-[#C8DB8A]"
-                                                    : "w-2 bg-zinc-300 hover:bg-[#C8DB8A] dark:bg-[#EFEDE6]/20 dark:hover:bg-[#C8DB8A]/60"
-                                            }`}
-                                            aria-label={`Go to page ${
-                                                index + 1
-                                            }`}
+                <div className="relative mx-auto max-w-6xl">
+                    <div
+                        className="relative mx-auto h-[clamp(10rem,31vw,22rem)] w-full max-w-5xl select-none overflow-visible px-2 sm:px-8"
+                        onTouchStart={(event) => {
+                            (event.currentTarget as HTMLDivElement).dataset.touchStartX = String(event.touches[0]?.clientX ?? 0);
+                        }}
+                        onTouchEnd={(event) => {
+                            const startX = Number((event.currentTarget as HTMLDivElement).dataset.touchStartX ?? 0);
+                            const endX = event.changedTouches[0]?.clientX ?? startX;
+                            const delta = endX - startX;
+                            if (Math.abs(delta) > 35) delta < 0 ? goToNext() : goToPrevious();
+                        }}
+                    >
+                        {/* Two layers behind the featured cover on each side. */}
+                        {[-2, -1, 1, 2].map((offset) => {
+                            const item = getProject(offset);
+                            const depth = Math.abs(offset);
+                            const isLeft = offset < 0;
+                            const x = depth === 1 ? 31 : 45;
+                            const scale = depth === 1 ? 0.78 : 0.64;
+                            const horizontalOffset = isLeft ? `-${x}%` : `${x}%`;
+                            return (
+                                <button
+                                    key={item.slug}
+                                    type="button"
+                                    onClick={() => setActiveIndex((activeIndex + offset + projects.length) % projects.length)}
+                                    aria-label={`Select project: ${item.title}`}
+                                    style={{
+                                        transform: `translate(calc(-50% + ${horizontalOffset}), -50%) scale(${scale})`,
+                                        ...(depth === 2 ? {
+                                            maskImage: "linear-gradient(to right, transparent 0%, black 18%, black 82%, transparent 100%)",
+                                            WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 18%, black 82%, transparent 100%)",
+                                        } : {}),
+                                    }}
+                                    className={`absolute left-1/2 top-1/2 block w-[56%] overflow-hidden rounded-xl border border-zinc-300/70 bg-zinc-200 shadow-[0_18px_38px_rgba(20,25,12,0.28)] transition-[transform,box-shadow] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] sm:w-[52%] sm:rounded-2xl dark:border-white/15 dark:bg-zinc-800 ${depth === 1 ? "z-[6]" : "z-[3]"}`}
+                                >
+                                    <div className="relative aspect-[16/10] overflow-hidden">
+                                        <img src={item.image} alt={`${item.title} project cover`} draggable={false} className="h-full w-full object-cover" />
+                                        {/* The covers fade into the background with a soft edge-to-edge veil. */}
+                                        <div
+                                            className="absolute inset-0 transition-colors duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
+                                            style={{
+                                                background: depth === 1
+                                                    ? "linear-gradient(110deg, rgba(9,9,11,.42) 0%, rgba(9,9,11,.18) 52%, rgba(9,9,11,.38) 100%)"
+                                                    : "linear-gradient(110deg, rgba(9,9,11,.72) 0%, rgba(9,9,11,.48) 52%, rgba(9,9,11,.68) 100%)",
+                                            }}
                                         />
-                                    ),
-                                )}
-                            </div>
+                                    </div>
+                                </button>
+                            );
+                        })}
 
-                            <button
-                                type="button"
-                                onClick={goToNextPage}
-                                disabled={currentPage === pageCount - 1}
-                                className="grid size-10 place-items-center rounded-full border border-zinc-200 text-zinc-600 transition hover:border-[#C8DB8A] hover:bg-[#F5F7E8] hover:text-[#385702] disabled:cursor-not-allowed disabled:opacity-35 dark:border-white/10 dark:text-[#EFEDE6]/65 dark:hover:border-[#C8DB8A]/35 dark:hover:bg-[#86A52A]/10 dark:hover:text-[#DDE7B7]"
-                                aria-label="Next projects"
-                            >
-                                <ArrowRightIcon className="size-4" />
-                            </button>
-                        </div>
+                        <Link
+                            to={`/projects/${project.slug}`}
+                            title={`View ${project.title}`}
+                            className="group absolute left-1/2 top-1/2 z-20 block w-[58%] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-xl border border-zinc-200/90 bg-zinc-100 shadow-[0_22px_58px_rgba(40,50,20,0.30)] outline-none transition-[box-shadow] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] hover:shadow-[0_28px_70px_rgba(40,50,20,0.36)] focus-visible:ring-2 focus-visible:ring-[#86A52A] sm:w-[54%] sm:rounded-2xl dark:border-white/15 dark:bg-zinc-900 dark:shadow-[0_22px_58px_rgba(0,0,0,0.58)]"
+                        >
+                            <div className="relative aspect-[16/10] overflow-hidden">
+                                <img key={project.slug} src={project.image} alt={`${project.title} project cover`} draggable={false} style={{ animation: "workGalleryFade 650ms cubic-bezier(0.22,1,0.36,1) both" }} className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.025]" />
+                                <span className="absolute bottom-3 right-3 grid size-8 place-items-center rounded-full border border-white/40 bg-black/20 text-white backdrop-blur-md transition duration-300 group-hover:rotate-45 group-hover:bg-black/45 sm:bottom-4 sm:right-4 sm:size-10">
+                                    <ArrowUpRightIcon className="size-4 sm:size-5" />
+                                </span>
+                            </div>
+                        </Link>
                     </div>
-                )}
+
+                    <div className="mx-auto max-w-2xl px-4 pb-2 pt-4 text-center sm:pt-6" aria-live="polite">
+                        <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#638522] dark:text-[#C8DB8A]">{project.category}</p>
+                        <h3 className="text-xl font-bold tracking-[-0.045em] text-zinc-950 sm:text-2xl lg:text-3xl dark:text-[#EFEDE6]">{project.title}</h3>
+                        <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-zinc-600 sm:text-base sm:leading-7 dark:text-[#EFEDE6]/70">{project.description}</p>
+                    </div>
+                </div>
             </div>
         </section>
     );
