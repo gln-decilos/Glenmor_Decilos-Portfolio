@@ -128,47 +128,11 @@ export default function ProjectsSection() {
                                         <ArrowUpRightIcon className="h-4 w-4 transition-transform duration-200 group-hover/cta:-translate-y-0.5 group-hover/cta:translate-x-0.5" />
                                     </Link>
 
-                                    <Link
-                                        to="/projects"
-                                        className="inline-flex items-center gap-1.5 rounded-full px-4 py-3 text-sm font-medium text-neutral-600 transition hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white"
-                                    >
-                                        All projects
-                                        <ArrowRightIcon className="h-3.5 w-3.5" />
-                                    </Link>
+                                    
                                 </div>
                             </div>
 
-                            {/* Up next navigation sits below the project actions */}
-                            {/* Up next */}
-                            {nextProject && (
-                                <button
-                                    type="button"
-                                    onClick={goToNext}
-                                    className="group mt-5 flex w-full min-w-0 items-center gap-3 rounded-2xl sm:mt-6 sm:gap-4 border border-neutral-200 bg-neutral-50/60 p-3 text-left transition duration-200 hover:border-neutral-300 hover:bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-900/60 dark:hover:border-neutral-700 dark:hover:bg-neutral-900"
-                                >
-                                    <div className="h-12 w-16 shrink-0 overflow-hidden rounded-lg sm:h-14 sm:w-20 bg-neutral-200 dark:bg-neutral-800">
-                                        {nextProject.image && (
-                                            <img
-                                                src={nextProject.image}
-                                                alt=""
-                                                loading="lazy"
-                                                className="h-full w-full object-cover"
-                                            />
-                                        )}
-                                    </div>
-
-                                    <div className="min-w-0 flex-1">
-                                        <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-neutral-400 dark:text-neutral-500">
-                                            Up next
-                                        </p>
-                                        <p className="mt-0.5 truncate text-sm font-medium text-neutral-900 dark:text-white">
-                                            {nextProject.title}
-                                        </p>
-                                    </div>
-
-                                    <ArrowRightIcon className="mr-2 h-4 w-4 shrink-0 text-neutral-400 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:text-neutral-900 dark:group-hover:text-white" />
-                                </button>
-                            )}
+                            
                         </div>
                         {/* Project preview */}
                         <div className="flex min-w-0 flex-col lg:col-span-7">
